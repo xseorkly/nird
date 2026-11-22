@@ -33,6 +33,62 @@
     'cle-usb': 'Clé USB : un petit objet qui garde des fichiers et qu’on branche sur un port USB.'
   };
 
+
+  /* ---------- Icônes (traits simples, couleur héritée) ---------- */
+  var ICONS = {
+    pencil:'<path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M14 6l4 4"/>',
+    users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16.5 14.2c2.8.3 5 2.4 5 5.8"/>',
+    check:'<circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/>',
+    gift:'<rect x="3" y="9" width="18" height="11" rx="2"/><path d="M12 9v11M3 13h18"/><path d="M12 9C10 5 6 5 7 8c.5 1 3 1 5 1zM12 9c2-4 6-4 5-1-.5 1-3 1-5 1z"/>',
+    bulb:'<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>',
+    book:'<path d="M4 5c3-1.5 6-1.5 8 0v15c-2-1.5-5-1.5-8 0V5zM20 5c-3-1.5-6-1.5-8 0v15c2-1.5 5-1.5 8 0V5z"/>',
+    chat:'<path d="M4 5h16v11H9l-5 4V5z"/><path d="M8 9h8M8 12h5"/>',
+    refresh:'<path d="M20 11a8 8 0 0 0-14.5-4M4 13a8 8 0 0 0 14.5 4"/><path d="M5 3v4h4M19 21v-4h-4"/>',
+    code:'<path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>',
+    layers:'<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/>',
+    unlock:'<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.5-2"/>',
+    lock:'<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+    wrench:'<path d="M15 4a5 5 0 0 0-4.6 6.9L4 17.3V20h2.7l6.4-6.4A5 5 0 0 0 20 9l-3 1-2-2 1-3z"/>',
+    trash:'<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/>',
+    box:'<path d="M3 7l9-4 9 4v10l-9 4-9-4V7z"/><path d="M3 7l9 4 9-4M12 11v10"/>',
+    cap:'<path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',
+    terminal:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/>',
+    plug:'<path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0V8zM12 17v4"/>',
+    eye:'<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+    star:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z"/>',
+    question:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .8-1 1.7M12 17v.5"/>',
+    bookmark:'<path d="M6 3h12v18l-6-4-6 4V3z"/>',
+    arrows:'<path d="M4 12h14M14 8l4 4-4 4"/><path d="M4 6h6M4 18h6"/>'
+  };
+  function icon(n) {
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICONS[n] || ICONS.star) + '</svg>';
+  }
+  /* illustration d'un mot : "photo:Fichier.jpg" ou "icon:nom" */
+  function illHtml(spec, alt) {
+    if (!spec) return '';
+    var i = spec.indexOf(':'), kind = spec.slice(0, i), val = spec.slice(i + 1);
+    if (kind === 'photo') return '<div class="mot-ill"><img data-file="' + val + '" data-w="400" alt="' + (alt || '') + '"></div>';
+    return '<div class="mot-ill icon">' + icon(val) + '</div>';
+  }
+  var LEXILL = {
+    'ordinateur':'photo:HP_ProDesk_600_G1_Tower_PC-001.jpg','logiciel':'icon:code','systeme':'icon:layers','mise-a-jour':'icon:refresh',
+    'obsolete':'photo:Ewaste-pile.jpg','libre':'icon:unlock','proprietaire':'icon:lock','linux':'icon:terminal','primtux':'icon:cap',
+    'reconditionner':'icon:wrench','dechet':'photo:Ewaste.jpg','recycler':'icon:refresh','unite-centrale':'photo:HP_ProDesk_600_G1_Tower_PC-001.jpg',
+    'peripherique':'photo:IBM_Model_M_keyboard_(PS-2)_and_mouse.jpg','entree':'photo:IBM_Model_M_keyboard_(PS-2)_and_mouse.jpg','sortie':'photo:Computer_monitor.jpg',
+    'alimentation':'photo:Cable-secteur.JPG','video':'photo:HDMI_Cable.JPG','port':'photo:PS2_keyboard_and_mouse_ports.jpg','hypothese':'icon:bulb',
+    'inventeur':'icon:bulb','carte-mere':'photo:Computer_Motherboard_Closeup.jpg','pile':'photo:CR2032_battery,_Mitsubishi,_computer_backup_battery-2423.jpg',
+    'disque':'photo:Laptop-hard-drive-exposed.jpg','ssd':'photo:Samsung_SSD_850_PRO_512GB.jpg','memoire':'photo:Computer_from_inside_018.jpg','cle-usb':'photo:Maxell_USB_flash_drive.jpg'
+  };
+  function initIllustrations() {
+    $$('.mot-card[data-ill]').forEach(function (c) {
+      var b = c.querySelector('b');
+      c.insertAdjacentHTML('afterbegin', illHtml(c.getAttribute('data-ill'), b ? b.textContent : ''));
+    });
+    $$('[data-ico]').forEach(function (el) {
+      el.insertAdjacentHTML('afterbegin', '<span class="ic">' + icon(el.getAttribute('data-ico')) + '</span>');
+    });
+  }
+
   var KEY = 'nird-c3-';
   function store(k, v) { try { localStorage.setItem(KEY + k, v); return true; } catch (e) { return false; } }
   function load(k) { try { return localStorage.getItem(KEY + k); } catch (e) { return null; } }
@@ -49,6 +105,7 @@
       img.loading = 'lazy';
       img.addEventListener('error', function () {
         var f = img.closest('.photo'); if (f) f.classList.add('noimg');
+        var m = img.closest('.mot-ill'); if (m) m.classList.add('broken');
       });
       img.src = photoUrl(img.getAttribute('data-file'), img.getAttribute('data-w'));
     });
@@ -210,7 +267,7 @@
     var keys = Object.keys(names).sort(function (a, b) { return names[a].localeCompare(names[b], 'fr'); });
     box.innerHTML = keys.map(function (k) {
       var def = LEX[k].replace(/^[^:]+ : /, '');
-      return '<div class="mot-card" data-search="' + (names[k] + ' ' + def).toLowerCase() + '"><b>' + names[k] + '</b>' + def + '</div>';
+      return '<div class="mot-card" data-search="' + (names[k] + ' ' + def).toLowerCase() + '">' + illHtml(LEXILL[k], names[k]) + '<b>' + names[k] + '</b>' + def + '</div>';
     }).join('');
     $('#lex-search').addEventListener('input', function (e) {
       var q = e.target.value.trim().toLowerCase();
@@ -228,10 +285,11 @@
 
   /* ---------- Démarrage ---------- */
   document.addEventListener('DOMContentLoaded', function () {
+    initIllustrations();
+    buildLexique();
     initPhotos();
     initFields();
     initWords();
-    buildLexique();
     setMode(load('mode') || 'eleve');
     $$('.mode button').forEach(function (b) { b.addEventListener('click', function () { setMode(b.getAttribute('data-mode')); }); });
     $$('[data-go-mode]').forEach(function (b) { b.addEventListener('click', function () { setMode(b.getAttribute('data-go-mode')); }); });

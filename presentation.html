@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Présentation aux enseignants — Projet NIRD au cycle 3</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400..700&family=Nunito+Sans:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/deck.css">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#0F1D16}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center}
+#stage section{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+#stage section:not(.cur){display:none !important}
+#stage aside{display:none}
+x-icon{display:inline-block}
+x-icon svg{width:100%;height:100%;display:block}
+x-shape{display:block}
+x-shape[kind="arrow-right"]{clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%);flex:0 0 auto}
+#bar{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:flex;gap:8px;align-items:center;background:rgba(15,29,22,.85);padding:8px 12px;border-radius:999px;font:700 15px 'Nunito Sans',sans-serif;color:#F6F3EA;z-index:10;opacity:.25;transition:opacity .2s}
+#bar:hover,body.show #bar{opacity:1}
+#bar button{border:0;background:#2A4A3B;color:#F6F3EA;border-radius:999px;padding:8px 14px;font:inherit;cursor:pointer}
+#bar button:hover{background:#E8833A;color:#14261D}
+#notes{position:fixed;left:50%;bottom:70px;transform:translateX(-50%);width:min(900px,92vw);max-height:30vh;overflow:auto;background:#F6F3EA;color:#1F3A2E;border-radius:16px;padding:16px 20px;font:17px/1.5 'Nunito Sans',sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.4);display:none;z-index:10}
+#notes.on{display:block}
+#notes b{font-family:'Fredoka',sans-serif}
+#hint{position:fixed;top:12px;right:16px;color:#C9DCCF;font:13px 'Nunito Sans',sans-serif;opacity:.6}
+</style>
+</head>
+<body>
+<div id="stage">
+<section id="cover" class="dark cover" data-transition="fade">
+<svg class="cover-art pop" aria-label="Un vieil ordinateur réparé, une feuille sur l’écran, entouré de flèches de recyclage et d’une clé à molette" width="720" height="720" viewBox="0 0 720 720">
+<circle cx="360" cy="360" r="330" fill="#2A4A3B"/>
+<path d="M360 60 A300 300 0 0 1 652 300" fill="none" stroke="#F2A65A" stroke-width="16" stroke-linecap="round"/>
+<path d="M628 262 L660 322 L596 318 Z" fill="#F2A65A"/>
+<path d="M360 660 A300 300 0 0 1 68 420" fill="none" stroke="#6BAF73" stroke-width="16" stroke-linecap="round"/>
+<path d="M92 458 L60 398 L124 402 Z" fill="#6BAF73"/>
+<rect x="160" y="180" width="400" height="270" rx="24" fill="#F6F3EA"/>
+<rect x="186" y="206" width="348" height="204" rx="12" fill="#1F3A2E"/>
+<path d="M360 236 C440 236 462 316 418 370 C376 404 318 384 306 338 C296 296 316 242 360 236 Z" fill="#6BAF73"/>
+<path d="M314 376 C342 330 374 298 414 274" stroke="#1F3A2E" stroke-width="7" fill="none" stroke-linecap="round"/>
+<rect x="328" y="450" width="64" height="52" fill="#D9D2C0"/>
+<rect x="262" y="500" width="196" height="22" rx="11" fill="#D9D2C0"/>
+<g transform="translate(548 452) rotate(-40)">
+<rect x="-15" y="10" width="30" height="170" rx="15" fill="#F2A65A"/>
+<path d="M-46 0 A46 46 0 1 1 46 0 L22 0 L22 -34 L-22 -34 L-22 0 Z" fill="#F2A65A"/>
+</g>
+</svg>
+<div class="cover-text">
+<p class="eyebrow rise" style="--i:0">Démarche NIRD · Cycle 3</p>
+<h1 class="rise" style="--i:1">Réparer, libérer, partager</h1>
+<p class="lead rise" style="--i:2">Quand des élèves de CM2 redonnent vie aux vieux ordinateurs de l’école</p>
+<p class="tag rise" style="--i:3">Numérique Inclusif, Responsable et Durable</p>
+</div>
+<aside>Accueil. L’idée en une phrase : des élèves de CM2 ont appris à réparer de vieux ordinateurs, à y installer un système libre, et les ont donnés à d’autres classes. C’est ce que propose la démarche NIRD, et c’est à la portée d’une classe de cycle 3.</aside>
+</section>
+<section id="constat" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Le point de départ : la fin de Windows 10</p>
+<h2>Des ordinateurs « obsolètes »… qui marchent encore</h2>
+</div>
+<div class="split">
+<div class="split-text">
+<div class="factcard rise" style="--i:1">
+<p class="big">75 %</p>
+<p>de l’impact environnemental du numérique vient de la <b>fabrication</b> des appareils.</p>
+<p class="small">Source : guide Eduscol « transition écologique », 2023</p>
+</div>
+<p class="rise" style="--i:2">Jeter un ordinateur qui fonctionne, c’est jeter cet impact. La démarche NIRD propose une autre voie : <b>réparer, installer un système libre, redonner</b>.</p>
+</div>
+<svg class="pop" style="--i:2" aria-label="Au lieu de jeter un vieil ordinateur à la poubelle, on le répare et il repart avec une feuille sur l’écran" width="640" height="520" viewBox="0 0 640 520">
+<rect x="20" y="40" width="220" height="150" rx="14" fill="#C9C2B0"/>
+<rect x="36" y="56" width="188" height="110" rx="8" fill="#8E877A"/>
+<rect x="110" y="190" width="40" height="28" fill="#C9C2B0"/>
+<rect x="80" y="216" width="100" height="14" rx="7" fill="#C9C2B0"/>
+<path d="M130 250 L130 360" stroke="#B4531A" stroke-width="8" stroke-dasharray="16 12" fill="none"/>
+<path d="M60 390 L200 390 L186 500 L74 500 Z" fill="#8E877A"/>
+<rect x="44" y="372" width="172" height="20" rx="6" fill="#6F695E"/>
+<path d="M92 270 L168 346 M168 270 L92 346" stroke="#B4531A" stroke-width="14" stroke-linecap="round"/>
+<path d="M200 120 C330 0 420 0 430 90" stroke="#3E7A4A" stroke-width="12" fill="none" stroke-linecap="round"/>
+<path d="M406 80 L432 124 L456 78 Z" fill="#3E7A4A"/>
+<rect x="380" y="150" width="240" height="164" rx="16" fill="#1F3A2E"/>
+<rect x="398" y="168" width="204" height="120" rx="8" fill="#F6F3EA"/>
+<path d="M500 186 C552 186 566 238 538 272 C510 294 474 280 466 252 C460 224 472 190 500 186 Z" fill="#6BAF73"/>
+<path d="M470 276 C488 246 510 226 536 210" stroke="#1F3A2E" stroke-width="5" fill="none" stroke-linecap="round"/>
+<rect x="480" y="314" width="40" height="30" fill="#1F3A2E"/>
+<rect x="446" y="342" width="108" height="14" rx="7" fill="#1F3A2E"/>
+</svg>
+</div>
+<aside>Le déclencheur : la fin du support de Windows 10. Beaucoup de machines de nos écoles sont déclarées obsolètes alors qu’elles fonctionnent. Or l’essentiel de l’impact du numérique, environ 75 %, vient de la fabrication. Prolonger la vie d’un ordinateur est donc le geste le plus efficace.</aside>
+</section>
+<section id="nird" class="alt" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Trois lettres, trois engagements</p>
+<h2>NIRD : un Numérique Inclusif, Responsable et Durable</h2>
+</div>
+<div class="trio">
+<div class="card rise" style="--i:1">
+<div class="letter bg-blue"><p>I</p></div>
+<h3>Inclusif</h3>
+<p class="strong">Le numérique pour tous</p>
+<p class="small">Des logiciels gratuits, que l’élève retrouve à la maison. Des ordinateurs donnés à des écoles voisines, au dispositif ULIS, à des familles.</p>
+</div>
+<div class="card rise" style="--i:2">
+<div class="letter bg-rust"><p>R</p></div>
+<h3>Responsable</h3>
+<p class="strong">Des outils libres qui respectent les données</p>
+<p class="small">Pas de publicité, pas de collecte commerciale. L’école garde la main sur ses choix, sans abonnement imposé.</p>
+</div>
+<div class="card rise" style="--i:3">
+<div class="letter bg-green"><p>D</p></div>
+<h3>Durable</h3>
+<p class="strong">Faire durer le matériel</p>
+<p class="small">Des PC de plus de 10 ans réutilisés grâce à Linux. Moins de déchets électroniques, une vraie éducation à la sobriété.</p>
+</div>
+</div>
+<aside>Chaque lettre est un engagement. Inclusif : réduire la fracture numérique. Responsable : des technologies libres et souveraines, respectueuses des données. Durable : lutter contre l’obsolescence programmée. Pour le primaire, la distribution utilisée est PrimTux, conçue par des professeurs des écoles.</aside>
+</section>
+<section id="esprit" class="dark" data-transition="fade">
+<div class="head">
+<p class="eyebrow">L’esprit de la démarche</p>
+<h2>Bien plus que changer de système</h2>
+</div>
+<div class="grid3">
+<div class="card rise" style="--i:1"><x-icon name="Users" class="ico"></x-icon><h3 class="t32">Partir du terrain</h3><p class="small">Des enseignants volontaires lancent et portent le projet.</p></div>
+<div class="card rise" style="--i:2"><x-icon name="Activity" class="ico"></x-icon><h3 class="t32">Avancer pas à pas</h3><p class="small">Mobiliser, expérimenter, puis intégrer.</p></div>
+<div class="card rise" style="--i:3"><x-icon name="Link" class="ico"></x-icon><h3 class="t32">Co-construire</h3><p class="small">Tout est partagé sous licence libre, chacun enrichit.</p></div>
+<div class="card rise" style="--i:4"><x-icon name="Wrench" class="ico"></x-icon><h3 class="t32">L’élève aux commandes</h3><p class="small">Il répare, installe, explique aux autres.</p></div>
+<div class="card rise" style="--i:5"><x-icon name="Home" class="ico"></x-icon><h3 class="t32">Faire ensemble</h3><p class="small">Enseignants, direction, service informatique, familles : chacun a un rôle.</p></div>
+<div class="card rise" style="--i:6"><x-icon name="Globe" class="ico"></x-icon><h3 class="t32">Penser bien commun</h3><p class="small">Sobriété, solidarité, liberté face aux grands éditeurs.</p></div>
+</div>
+<aside>L’esprit compte autant que la technique. C’est une démarche de terrain, progressive et partagée. L’élève devient acteur d’un numérique qu’il comprend. Et le projet fait travailler ensemble les enseignants, la direction, le service informatique et les familles.</aside>
+</section>
+<section id="reseau" class="alt" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Une démarche déjà en marche · 2025-2026</p>
+<h2>32 établissements déjà pilotes</h2>
+</div>
+<div class="grid4" style="flex:none">
+<div class="card pop" style="--i:1;background:#F6C28F;border-color:#F6C28F"><p class="big" style="color:#14261D">3</p><p class="strong">écoles</p></div>
+<div class="card pop" style="--i:2"><p class="big">10</p><p class="strong">collèges</p></div>
+<div class="card pop" style="--i:3"><p class="big">2</p><p class="strong">cités scolaires</p></div>
+<div class="card pop" style="--i:4"><p class="big">17</p><p class="strong">lycées</p></div>
+</div>
+<div class="grid3" style="flex:none">
+<div class="factcard rise" style="--i:5"><p class="strong">Partout en France</p><p class="small">15 académies, de Lille à Toulouse, de Rennes à la Polynésie française.</p></div>
+<div class="factcard rise" style="--i:6"><p class="strong">10 avec les élèves</p><p class="small">Le reconditionnement par les élèves : 1 école, 3 collèges, 1 cité scolaire, 5 lycées.</p></div>
+<div class="factcard rise" style="--i:7"><p class="strong">Des villes engagées</p><p class="small">Blois, Lyon ou Caudry passent les ordinateurs de leurs écoles sous PrimTux.</p></div>
+</div>
+<p class="small">Source : liste des établissements pilotes sur nird.forge.apps.education.fr. Origine du projet : le lycée Carnot de Bruay-la-Buissière, depuis 2020.</p>
+<aside>La démarche n’est pas l’affaire d’une seule école. En 2025-2026, 32 établissements sont pilotes : 3 écoles, 10 collèges, 2 cités scolaires et 17 lycées, dans 15 académies. Dix d’entre eux font reconditionner les ordinateurs par leurs élèves. Au primaire, l’école Louis Barrié de Figeac est la seule où ce sont les élèves eux-mêmes qui reconditionnent : c’est justement ce qui en fait un exemple précieux, puisqu’elle prouve que c’est possible dès le CM2. Autre piste pour une école : s’associer à un collège ou un lycée voisin. Les élèves du lycée Carnot livrent ainsi des ordinateurs PrimTux aux écoles primaires de leur secteur.</aside>
+</section>
+<section id="figeac" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Zoom sur une école pilote · 2025-2026</p>
+<h2>Le CM2 de Louis Barrié, à Figeac</h2>
+</div>
+<div class="split">
+<div class="split-text">
+<p class="rise" style="--i:1">Une classe de CM2 a appris, toute l’année, à <b>diagnostiquer, réparer et réinstaller</b> de vieux ordinateurs sous Linux, puis à les donner.</p>
+<div class="factcard rise" style="--i:2">
+<p class="strong">Point de départ</p>
+<p class="small">20 postes des écoles de Figeac, trop anciens pour passer à Windows 11.</p>
+</div>
+<div class="factcard rise" style="--i:3">
+<p class="strong">Autour de la classe</p>
+<p class="small">La mairie (matériel, financement, réseau), l’association Souris Vertes, la Fédération Partir (périscolaire), la DRANE Occitanie.</p>
+</div>
+</div>
+<div class="card pop" style="--i:2;width:660px;align-items:center">
+<p class="huge">11</p>
+<p class="strong" style="text-align:center">ordinateurs reconditionnés et donnés par des élèves de 10 ans</p>
+<svg aria-label="Onze petits ordinateurs" width="464" height="152" viewBox="0 0 580 190">
+<g fill="#1F3A2E">
+<rect x="0" y="0" width="80" height="54" rx="8"/><rect x="98" y="0" width="80" height="54" rx="8"/><rect x="196" y="0" width="80" height="54" rx="8"/><rect x="294" y="0" width="80" height="54" rx="8"/><rect x="392" y="0" width="80" height="54" rx="8"/><rect x="490" y="0" width="80" height="54" rx="8"/>
+<rect x="49" y="104" width="80" height="54" rx="8"/><rect x="147" y="104" width="80" height="54" rx="8"/><rect x="245" y="104" width="80" height="54" rx="8"/><rect x="343" y="104" width="80" height="54" rx="8"/><rect x="441" y="104" width="80" height="54" rx="8"/>
+<rect x="30" y="56" width="20" height="12"/><rect x="128" y="56" width="20" height="12"/><rect x="226" y="56" width="20" height="12"/><rect x="324" y="56" width="20" height="12"/><rect x="422" y="56" width="20" height="12"/><rect x="520" y="56" width="20" height="12"/>
+<rect x="79" y="160" width="20" height="12"/><rect x="177" y="160" width="20" height="12"/><rect x="275" y="160" width="20" height="12"/><rect x="373" y="160" width="20" height="12"/><rect x="471" y="160" width="20" height="12"/>
+</g>
+<g fill="#6BAF73">
+<circle cx="40" cy="27" r="13"/><circle cx="138" cy="27" r="13"/><circle cx="236" cy="27" r="13"/><circle cx="334" cy="27" r="13"/><circle cx="432" cy="27" r="13"/><circle cx="530" cy="27" r="13"/>
+<circle cx="89" cy="131" r="13"/><circle cx="187" cy="131" r="13"/><circle cx="285" cy="131" r="13"/><circle cx="383" cy="131" r="13"/><circle cx="481" cy="131" r="13"/>
+</g>
+</svg>
+</div>
+</div>
+<aside>Voici l’exemple concret : la classe de CM2 de l’école Louis Barrié à Figeac, en 2025-2026. Partie de 20 postes trop anciens pour Windows 11, la classe a reconditionné et donné 11 ordinateurs. La mairie a fourni et financé le matériel, l’association Souris Vertes a aidé pendant les séances.</aside>
+</section>
+<section id="techno-chiffre" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Impact pédagogique · Technologie</p>
+<h2>Technologie : 2 objectifs sur 3</h2>
+</div>
+<p class="rise" style="--i:1">Nouveau programme de sciences et technologie du cycle 3 (BO du 11 juin 2026), domaine « Les objets techniques au cœur de la société » : <b>26 objectifs</b> en CM1 et CM2.</p>
+<div class="bar pop" style="--i:2">
+<div class="seg seg-full"><p>11 pleinement</p></div>
+<div class="seg seg-part"><p>6 en partie</p></div>
+<div class="seg seg-none"><p>9 non abordés</p></div>
+</div>
+<div class="stats">
+<div class="stat s-full rise" style="--i:3"><p class="statnum">42 %</p><p class="small">des objectifs travaillés pleinement</p></div>
+<div class="stat s-part rise" style="--i:4"><p class="statnum">65 %</p><p class="small">travaillés au moins en partie</p></div>
+<div class="stat s-all rise" style="--i:5"><p class="statnum">17 sur 17</p><p class="small">hors programmation, tous les objectifs sont touchés</p></div>
+</div>
+<p class="small">Les 9 objectifs non abordés concernent tous la programmation. Analyse réalisée objectif par objectif à partir du texte officiel. Le domaine n’a pas d’objectifs propres en 6e.</p>
+<aside>C’est le cœur de l’argument. J’ai repris un par un les 26 objectifs du domaine « Les objets techniques au cœur de la société » du nouveau programme de cycle 3, paru au BO du 11 juin 2026. Le projet en travaille 11 pleinement et 6 en partie, soit 65 %. Les 9 restants sont tous des objectifs de programmation : hors programmation, le projet touche la totalité des objectifs. Calendrier : ce programme s’applique en CM1 dès cette rentrée 2026, en CM2 et en 6e à la rentrée 2027. Cette année, les CM2 suivent encore le programme de 2023, qui contient les mêmes grandes notions.</aside>
+</section>
+<section id="techno-detail" class="alt" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Impact pédagogique · Technologie</p>
+<h2>Thème par thème : ce qui est couvert</h2>
+</div>
+<div class="grid2">
+<div class="card tight rise" style="--i:1">
+<p class="eyebrow">CM1 · 4 objectifs</p>
+<h3 class="t32">Les objets en réponse aux besoins</h3>
+<div class="mini"><div class="m-full" style="flex:2"></div><div class="m-part" style="flex:2"></div></div>
+<p class="small"><b>2 pleinement, 2 en partie.</b> Un ordinateur jugé « obsolète » parce qu’il ne passe pas à Windows 11 : un objet qui évolue avec son contexte.</p>
+</div>
+<div class="card tight rise" style="--i:2">
+<p class="eyebrow">CM1 · 7 objectifs</p>
+<h3 class="t32">Fonctionnement et constitution</h3>
+<div class="mini"><div class="m-full" style="flex:5"></div><div class="m-part" style="flex:2"></div></div>
+<p class="small"><b>5 pleinement, 2 en partie.</b> Composants, fonctions, sous-ensembles : unité centrale, carte mère, pile, disque, mémoire.</p>
+</div>
+<div class="card tight rise" style="--i:3">
+<p class="eyebrow">CM2 · 6 objectifs</p>
+<h3 class="t32">Démarche de conception</h3>
+<div class="mini"><div class="m-full" style="flex:4"></div><div class="m-part" style="flex:2"></div></div>
+<p class="small"><b>4 pleinement, 2 en partie.</b> Résoudre une panne, s’organiser en équipe, tester, comparer selon la durée de vie et la transition écologique.</p>
+</div>
+<div class="card tight rise" style="--i:4">
+<p class="eyebrow">CM1 et CM2 · 9 objectifs</p>
+<h3 class="t32">Programmation d’objets</h3>
+<div class="mini"><div class="m-none" style="flex:9"></div></div>
+<p class="small"><b>Non abordée par le reconditionnement.</b> Prolongement facile : Scratch est dans PrimTux, et Figeac l’a utilisé avec un Makey Makey.</p>
+</div>
+</div>
+<aside>Le détail par thème. Le projet est très fort sur le fonctionnement et la constitution d’un objet technique, et sur la démarche de conception en CM2. La programmation n’est pas travaillée par le reconditionnement lui-même, mais elle se greffe facilement : Scratch est installé dans PrimTux, et à Figeac les élèves l’ont utilisé avec un Makey Makey pour une exposition interactive.</aside>
+</section>
+<section id="techno-exemples" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Impact pédagogique · Technologie</p>
+<h2>Du programme à la classe, concrètement</h2>
+</div>
+<table class="match rise" style="--i:1">
+<tr class="hd"><th style="width:44%">Ce que demande le programme</th><th>Ce que font les élèves dans le projet</th></tr>
+<tr><td>Identifier les fonctions des composants d’un objet</td><td>Nommer carte mère, mémoire, disque, pile, ventilateurs et dire à quoi ils servent</td></tr>
+<tr><td>Identifier les sous-ensembles d’un objet technique</td><td>Distinguer unité centrale et périphériques, ouvrir le boîtier</td></tr>
+<tr><td>Associer une solution technique à une fonction</td><td>La pile garde l’heure et les réglages ; le disque SSD stocke les données</td></tr>
+<tr><td>Imaginer une solution à un problème donné</td><td>Panne « batterie faible » : hypothèse, puis plan d’action écrit ensemble</td></tr>
+<tr><td>Organiser le travail et planifier en équipe</td><td>Groupes de 3 aux rôles tournants, cartes missions, feuille de suivi</td></tr>
+<tr><td>Vérifier la solution, la modifier si besoin</td><td>Tester le démarrage, régler le BIOS, recommencer jusqu’à ce que ça marche</td></tr>
+<tr><td>Comparer des solutions : durée de vie, transition écologique</td><td>Réparer ou racheter ? Disque dur ou SSD ? Windows ou Linux ?</td></tr>
+<tr><td>Produire un croquis légendé, expliquer à l’oral ou à l’écrit</td><td>Bande dessinée avec AutoBD, exposés aux classes qui reçoivent les PC</td></tr>
+</table>
+<aside>Quelques exemples de correspondance entre les objectifs officiels et ce que font réellement les élèves. Chaque ligne de gauche est un objectif du nouveau programme, reformulé ; chaque ligne de droite est une activité menée à Figeac.</aside>
+</section>
+<section id="sciences-plus" class="alt" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Impact pédagogique · Sciences et technologie</p>
+<h2>Et dans le reste du programme</h2>
+</div>
+<div class="grid3">
+<div class="card tight rise" style="--i:1"><x-icon name="Activity" class="ico"></x-icon><h3 class="t32">Le cycle de vie</h3><p class="small">Une notion que le programme qualifie d’« essentielle » pour les objets techniques.</p></div>
+<div class="card tight rise" style="--i:2"><x-icon name="Warning" class="ico"></x-icon><h3 class="t32">Sécurité électrique</h3><p class="small">Rechercher et appliquer les règles (CM1 et 6e) : débrancher avant d’ouvrir.</p></div>
+<div class="card tight rise" style="--i:3"><x-icon name="Globe" class="ico"></x-icon><h3 class="t32">Projets EDD (CM2)</h3><p class="small">S’impliquer dans un projet de transition écologique : ressources et déchets.</p></div>
+<div class="card tight rise" style="--i:4"><x-icon name="ThumbsUp" class="ico"></x-icon><h3 class="t32">Agir (6e)</h3><p class="small">Relier les enjeux du développement durable à des actions individuelles et collectives.</p></div>
+<div class="card tight rise" style="--i:5"><x-icon name="Users" class="ico"></x-icon><h3 class="t32">Travail de groupe</h3><p class="small">Des tâches réparties de façon égalitaire et non fixe : exactement les rôles tournants.</p></div>
+<div class="card tight rise" style="--i:6"><x-icon name="Code" class="ico"></x-icon><h3 class="t32">Culture numérique</h3><p class="small">Explorer le numérique dans les objets, en faire un usage responsable.</p></div>
+</div>
+<aside>Le projet ne se limite pas au domaine des objets techniques. Il rejoint d’autres attendus du nouveau programme : la notion de cycle de vie, les règles de sécurité électrique, l’engagement dans un projet de développement durable en CM2, le lien entre enjeux et actions en 6e. Les principes du programme demandent aussi un travail de groupe où les tâches tournent, ce que font précisément les rôles photographe, opérateur et contrôleur.</aside>
+</section>
+<section id="emc" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Impact pédagogique · EMC (programme de 2024)</p>
+<h2>EMC : des valeurs mises en actes</h2>
+</div>
+<div class="emc">
+<div class="card rise" style="--i:1">
+<p class="eyebrow">CM1 · Faire société</p>
+<div class="pair"><p class="small"><b>Civisme envers l’environnement et en ligne</b></p><p class="small">On répare au lieu de jeter, on efface les données.</p></div>
+<div class="pair"><p class="small"><b>Agir pour l’intérêt général</b></p><p class="small">Les ordinateurs servent à d’autres classes.</p></div>
+<div class="pair"><p class="small"><b>Égalité filles-garçons, respect de chacun</b></p><p class="small">Mêmes gestes pour tous, Ada &amp; Zangemann.</p></div>
+<div class="pair"><p class="small"><b>Débattre en nuançant son avis</b></p><p class="small">Le numérique pollue-t-il ? Faut-il racheter ?</p></div>
+</div>
+<div class="card rise" style="--i:2">
+<p class="eyebrow">CM2 · Vivre en république</p>
+<div class="pair"><p class="small"><b>Le devoir de protéger l’environnement</b></p><p class="small">Moins de déchets électroniques, en lien avec la Charte de l’environnement.</p></div>
+<div class="pair"><p class="small"><b>Esprit critique : croyance, opinion ou savoir ?</b></p><p class="small">Des chiffres sourcés de l’ADEME sur l’impact du numérique.</p></div>
+<div class="pair"><p class="small"><b>Engagement et sens des responsabilités</b></p><p class="small">Chaque groupe est responsable d’une machine.</p></div>
+<div class="pair"><p class="small"><b>Coopération dans un projet collectif</b></p><p class="small">Avec la direction, le service informatique, d’autres classes.</p></div>
+</div>
+</div>
+<p class="small">Programme d’EMC du BO du 13 juin 2024, en vigueur en CM1 depuis 2024 et en CM2 depuis 2025.</p>
+<aside>En EMC, le projet fait vivre concrètement le programme de 2024. En CM1, « Faire société » : le civisme envers l’environnement et en ligne, l’intérêt général, l’égalité, le débat réglé. En CM2, « Vivre en république » : le devoir de protéger l’environnement, l’esprit critique, et les compétences d’engagement, de responsabilité et de coopération dans un projet collectif. Ce ne sont pas des leçons sur ces valeurs : les élèves les pratiquent.</aside>
+</section>
+<section id="edd" class="alt" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Impact pédagogique · Développement durable</p>
+<h2>EDD : les 4 domaines du référentiel</h2>
+</div>
+<div class="grid2">
+<div class="card tight rise" style="--i:1"><p class="eyebrow">Domaine 1</p><h3 class="t32">Exercer son esprit critique</h3><p class="small">Distinguer faits et opinions, s’appuyer sur la science : impact carbone, métaux rares, outil Impact CO2 de l’ADEME.</p></div>
+<div class="card tight rise" style="--i:2"><p class="eyebrow">Domaine 2</p><h3 class="t32">Agir seul et avec les autres</h3><p class="small">Réparer, donner, travailler en équipe avec la direction et le service informatique : passer du geste individuel à l’action collective.</p></div>
+<div class="card tight rise" style="--i:3"><p class="eyebrow">Domaine 3</p><h3 class="t32">Comprendre la complexité</h3><p class="small">Les effets des activités humaines : fabrication, ressources, déchets. Des données sous plusieurs formes.</p></div>
+<div class="card tight rise" style="--i:4"><p class="eyebrow">Domaine 4</p><h3 class="t32">Agir de façon éthique</h3><p class="small">L’équité (un ordinateur pour ceux qui n’en ont pas), le souci des générations futures, le principe de réparation.</p></div>
+</div>
+<p class="small">Référentiel de compétences en éducation au développement durable (Eduscol) ; circulaire du 24 septembre 2020.</p>
+<aside>Le projet coche les quatre domaines du référentiel EDD d’Eduscol. L’esprit critique, avec des données scientifiques sur l’impact du numérique. L’action individuelle et collective, avec la réparation et le don. La compréhension de la complexité, avec les effets de la fabrication sur les ressources et les déchets. Et une conduite éthique : l’équité et le souci des générations futures.</aside>
+</section>
+<section id="gains" class="dark" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Impact pédagogique · En résumé</p>
+<h2>Ce que les élèves y gagnent</h2>
+</div>
+<div class="grid3">
+<div class="card tight rise" style="--i:1"><x-icon name="Star" class="ico"></x-icon><h3 class="t32">De l’autonomie</h3><p class="small">En juin, une équipe d’experts reconditionne seule un ordinateur.</p></div>
+<div class="card tight rise" style="--i:2"><x-icon name="Chat" class="ico"></x-icon><h3 class="t32">De l’aisance à l’oral</h3><p class="small">15 minutes de bilan devant des adultes, sans aide.</p></div>
+<div class="card tight rise" style="--i:3"><x-icon name="Users" class="ico"></x-icon><h3 class="t32">De la coopération</h3><p class="small">Des rôles qui tournent : chacun manipule, chacun écrit.</p></div>
+<div class="card tight rise" style="--i:4"><x-icon name="ThumbsUp" class="ico"></x-icon><h3 class="t32">Le sentiment d’être utile</h3><p class="small">Leur travail sert vraiment à d’autres classes.</p></div>
+<div class="card tight rise" style="--i:5"><x-icon name="Search" class="ico"></x-icon><h3 class="t32">De l’esprit critique</h3><p class="small">Ils comprennent pourquoi on jette, et pourquoi on peut réparer.</p></div>
+<div class="card tight rise" style="--i:6"><x-icon name="Verified" class="ico"></x-icon><h3 class="t32">De l’égalité</h3><p class="small">Filles et garçons font les mêmes gestes techniques.</p></div>
+</div>
+<aside>Au-delà des programmes, ce sont des compétences que tout enseignant recherche : l’autonomie, l’oral, la coopération, le sentiment d’être utile, l’esprit critique et l’égalité entre filles et garçons. À Figeac, la classe a présenté seule son bilan pendant un quart d’heure : c’est la meilleure preuve de cette appropriation.</aside>
+</section>
+<section id="parcours" class="alt" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Le déroulé</p>
+<h2>Le parcours de l’année en 7 phases</h2>
+</div>
+<div class="bands rise" style="--i:0">
+<div class="band b1"><p>Apprendre ensemble</p></div>
+<div class="band b2"><p>Agir pour les autres</p></div>
+</div>
+<div class="phases">
+<div class="phase rise" style="--i:1"><div class="num"><p>0</p></div><p class="t">Entrer par une histoire</p><p class="d">Lire le conte Ada &amp; Zangemann</p></div>
+<div class="phase rise" style="--i:2"><div class="num"><p>1</p></div><p class="t">Découvrir l’ordinateur</p><p class="d">Brancher, ouvrir, nommer les pièces</p></div>
+<div class="phase rise" style="--i:3"><div class="num"><p>2</p></div><p class="t">Réparer une panne</p><p class="d">La pile de la carte mère</p></div>
+<div class="phase rise" style="--i:4"><div class="num"><p>3</p></div><p class="t">Comprendre les enjeux</p><p class="d">Impact carbone, métaux rares</p></div>
+<div class="phase rise" style="--i:5"><div class="num"><p>4</p></div><p class="t">Changer le disque, installer Linux</p><p class="d">Le geste complet</p></div>
+<div class="phase rise" style="--i:6"><div class="num act"><p>5</p></div><p class="t">Reconditionner un lot</p><p class="d">En groupes de 3, avec des cartes missions</p></div>
+<div class="phase rise" style="--i:7"><div class="num act"><p>6</p></div><p class="t">Livrer et présenter</p><p class="d">Aux classes qui reçoivent les PC</p></div>
+</div>
+<aside>Le projet suit sept phases. De 0 à 4, on apprend ensemble, en collectif : une histoire pour entrer dans le sujet, la découverte de l’ordinateur, une première panne, les enjeux, puis le geste complet. Les phases 5 et 6 se répètent à chaque lot de machines : on reconditionne, puis on livre et on présente. Compter environ 6 à 8 séances d’apprentissage, puis une demi-journée par lot.</aside>
+</section>
+<section id="cmos" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Phase 2, en détail</p>
+<h2>Réparer comme un scientifique</h2>
+</div>
+<div class="flow">
+<div class="card rise" style="--i:1"><x-icon name="Warning" class="ico"></x-icon><h3 class="t32">Le problème</h3><p class="small">Au démarrage, l’ordinateur affiche « batterie faible ».</p></div>
+<x-shape kind="arrow-right" class="arr"></x-shape>
+<div class="card rise" style="--i:2"><x-icon name="Lightbulb" class="ico"></x-icon><h3 class="t32">L’hypothèse</h3><p class="small">La petite pile de la carte mère est usée.</p></div>
+<x-shape kind="arrow-right" class="arr"></x-shape>
+<div class="card rise" style="--i:3"><x-icon name="Book" class="ico"></x-icon><h3 class="t32">Le plan d’action</h3><p class="small">Écrit ensemble sur OpenBoard. Un élève tiré au sort fait le geste, filmé pour la classe.</p></div>
+<x-shape kind="arrow-right" class="arr"></x-shape>
+<div class="card rise" style="--i:4"><x-icon name="Search" class="ico"></x-icon><h3 class="t32">L’observation</h3><p class="small">Un message, puis plus rien : l’heure et les réglages sont conservés.</p></div>
+</div>
+<p class="small rise" style="--i:5">Tous les outils sont déjà dans PrimTux : OpenBoard pour écrire, Lama Tools pour le tirage au sort et le minuteur, AutoBD pour raconter en bande dessinée.</p>
+<aside>Un exemple de séance : la pile CMOS. On part d’un vrai message d’erreur, les élèves formulent une hypothèse, écrivent ensemble un plan d’action, puis un élève tiré au sort remplace la pile pendant que la classe suit à l’écran. On observe le résultat. C’est une démarche d’investigation complète, au cœur du programme de sciences et technologie.</aside>
+</section>
+<section id="geste" class="alt" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Phase 4 : le geste complet</p>
+<h2>6 étapes pour redonner vie à un PC</h2>
+</div>
+<div class="grid3">
+<div class="card step rise" style="--i:1">
+<svg aria-label="Une poire soufflante chasse la poussière" width="120" height="120" viewBox="0 0 120 120"><ellipse cx="44" cy="70" rx="30" ry="36" fill="#B4531A"/><rect x="66" y="62" width="30" height="14" rx="5" fill="#B4531A"/><circle cx="104" cy="52" r="6" fill="#6BAF73"/><circle cx="110" cy="72" r="5" fill="#6BAF73"/><circle cx="102" cy="90" r="7" fill="#6BAF73"/></svg>
+<div class="step-text"><h3>1. Nettoyer</h3><p class="small">Ouvrir, souffler la poussière, vérifier les pièces.</p></div>
+</div>
+<div class="card step rise" style="--i:2">
+<svg aria-label="Une pile bouton" width="120" height="120" viewBox="0 0 120 120"><circle cx="60" cy="60" r="46" fill="#8E877A"/><circle cx="60" cy="60" r="34" fill="#C9C2B0"/><path d="M60 42 L60 78 M42 60 L78 60" stroke="#1F3A2E" stroke-width="8" stroke-linecap="round"/></svg>
+<div class="step-text"><h3>2. Changer la pile</h3><p class="small">Pile bouton CR2032 de la carte mère.</p></div>
+</div>
+<div class="card step rise" style="--i:3">
+<svg aria-label="Un disque SSD" width="120" height="120" viewBox="0 0 120 120"><rect x="14" y="26" width="92" height="68" rx="8" fill="#1F3A2E"/><rect x="28" y="40" width="48" height="22" rx="4" fill="#6BAF73"/><rect x="86" y="44" width="20" height="32" fill="#F2A65A"/></svg>
+<div class="step-text"><h3>3. Poser un SSD</h3><p class="small">Remplacer le vieux disque dur.</p></div>
+</div>
+<div class="card step rise" style="--i:4">
+<svg aria-label="Un écran de réglages avec un interrupteur" width="120" height="120" viewBox="0 0 120 120"><rect x="10" y="18" width="100" height="72" rx="8" fill="#1F3A2E"/><rect x="26" y="34" width="44" height="8" rx="4" fill="#C9DCCF"/><rect x="26" y="52" width="32" height="8" rx="4" fill="#C9DCCF"/><rect x="66" y="58" width="32" height="18" rx="9" fill="#F2A65A"/><circle cx="89" cy="67" r="7" fill="#F6F3EA"/><rect x="50" y="90" width="20" height="12" fill="#1F3A2E"/></svg>
+<div class="step-text"><h3>4. Régler le BIOS</h3><p class="small">Au début, c’est l’adulte qui s’en charge.</p></div>
+</div>
+<div class="card step rise" style="--i:5">
+<svg aria-label="Une clé USB" width="120" height="120" viewBox="0 0 120 120"><rect x="16" y="40" width="68" height="40" rx="10" fill="#3A6EA5"/><rect x="84" y="46" width="24" height="28" fill="#C9C2B0"/><rect x="92" y="52" width="6" height="6" fill="#1F3A2E"/><rect x="92" y="62" width="6" height="6" fill="#1F3A2E"/><circle cx="40" cy="60" r="8" fill="#F6F3EA"/></svg>
+<div class="step-text"><h3>5. Installer PrimTux</h3><p class="small">Depuis une clé USB préparée.</p></div>
+</div>
+<div class="card step rise" style="--i:6">
+<svg aria-label="Deux flèches en cercle" width="120" height="120" viewBox="0 0 120 120"><path d="M24 60 A36 36 0 0 1 88 36" stroke="#3E7A4A" stroke-width="12" fill="none" stroke-linecap="round"/><path d="M78 22 L100 36 L78 50 Z" fill="#3E7A4A"/><path d="M96 60 A36 36 0 0 1 32 84" stroke="#3E7A4A" stroke-width="12" fill="none" stroke-linecap="round"/><path d="M42 98 L20 84 L42 70 Z" fill="#3E7A4A"/></svg>
+<div class="step-text"><h3>6. Mettre à jour</h3><p class="small">Le poste est prêt à être donné.</p></div>
+</div>
+</div>
+<aside>Les six étapes, telles que les élèves de Figeac les présentent dans leur diaporama de bilan : nettoyer, changer la pile, poser un SSD, régler le BIOS, installer PrimTux depuis une clé USB, faire les mises à jour. La seule étape délicate est le BIOS, parce que les menus changent selon les marques : l’enseignant la prend en charge au début.</aside>
+</section>
+<section id="roles" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Organisation de classe</p>
+<h2>En groupes de 3, chacun son rôle</h2>
+</div>
+<div class="trio">
+<div class="card role rise" style="--i:1">
+<svg aria-label="Un élève avec un appareil photo" width="240" height="240" viewBox="0 0 240 240"><circle cx="120" cy="120" r="112" fill="#ECE6D6"/><circle cx="120" cy="78" r="34" fill="#3A6EA5"/><path d="M58 210 C58 150 182 150 182 210 Z" fill="#3A6EA5"/><rect x="82" y="140" width="76" height="52" rx="10" fill="#1F3A2E"/><circle cx="120" cy="166" r="16" fill="#F6F3EA"/><circle cx="120" cy="166" r="8" fill="#1F3A2E"/><rect x="92" y="132" width="22" height="10" rx="3" fill="#1F3A2E"/></svg>
+<h3>Le photographe</h3>
+<p class="small">Photographie chaque étape : la mémoire du groupe.</p>
+</div>
+<div class="card role rise" style="--i:2">
+<svg aria-label="Un élève avec un tournevis" width="240" height="240" viewBox="0 0 240 240"><circle cx="120" cy="120" r="112" fill="#ECE6D6"/><circle cx="120" cy="78" r="34" fill="#B4531A"/><path d="M58 210 C58 150 182 150 182 210 Z" fill="#B4531A"/><g transform="translate(120 170) rotate(-35)"><rect x="-10" y="-46" width="20" height="44" rx="8" fill="#F2A65A"/><rect x="-4" y="-2" width="8" height="50" fill="#8E877A"/></g></svg>
+<h3>L’opérateur</h3>
+<p class="small">Réalise la mission écrite sur la carte.</p>
+</div>
+<div class="card role rise" style="--i:3">
+<svg aria-label="Un élève avec une feuille de suivi cochée" width="240" height="240" viewBox="0 0 240 240"><circle cx="120" cy="120" r="112" fill="#ECE6D6"/><circle cx="120" cy="78" r="34" fill="#3E7A4A"/><path d="M58 210 C58 150 182 150 182 210 Z" fill="#3E7A4A"/><rect x="88" y="128" width="64" height="80" rx="6" fill="#F6F3EA"/><path d="M98 148 l8 8 l14 -14 M98 172 l8 8 l14 -14" stroke="#3E7A4A" stroke-width="5" fill="none" stroke-linecap="round"/><rect x="126" y="150" width="18" height="5" fill="#8E877A"/><rect x="126" y="174" width="18" height="5" fill="#8E877A"/></svg>
+<h3>Le contrôleur</h3>
+<p class="small">Coche les étapes faites sur la feuille de suivi.</p>
+</div>
+</div>
+<p class="rise" style="--i:4"><b>Les rôles tournent.</b> Pendant ce temps, l’autre moitié de la classe prépare l’exposé pour les destinataires.</p>
+<aside>L’organisation testée à Figeac : la classe est coupée en deux. Une moitié reconditionne en groupes de trois, avec trois rôles qui tournent : photographe, opérateur, contrôleur. L’autre moitié prépare, avec une carte mentale, l’exposé qu’elle fera aux classes qui reçoivent les ordinateurs.</aside>
+</section>
+<section id="autonomie" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Sur l’année</p>
+<h2>Des élèves de plus en plus autonomes</h2>
+</div>
+<div class="stairs">
+<div class="card s1 rise" style="--i:1">
+<p class="eyebrow">Janvier</p>
+<h3 class="t32">Première séance</h3>
+<p class="small">3 adultes en renfort. Réussie, mais très chargée.</p>
+</div>
+<div class="card s2 rise" style="--i:2">
+<p class="eyebrow">Fin janvier</p>
+<h3 class="t32">Les gestes sont acquis</h3>
+<p class="small">Les élèves suivent une trame projetée et documentent leur travail.</p>
+</div>
+<div class="card s3 rise" style="--i:3">
+<p class="eyebrow">Juin</p>
+<h3 class="t32">Une équipe d’experts</h3>
+<p class="small">Des élèves reconditionnent un ordinateur en autonomie complète.</p>
+</div>
+</div>
+<p class="rise" style="--i:4">En fin d’année, les CM2 ont présenté seuls leur bilan pendant 15 minutes, filmés par la DRANE Occitanie.</p>
+<aside>Le plus marquant, c’est la progression. En janvier, il fallait trois adultes en renfort. Fin janvier, les élèves maîtrisaient les étapes. En juin, une équipe d’experts reconditionnait une machine seule, et la classe a présenté son bilan pendant un quart d’heure sans aide de l’enseignant.</aside>
+</section>
+<section id="paroles" class="dark" data-transition="fade">
+<p class="eyebrow">Ce qu’en disent les élèves</p>
+<div class="quotes">
+<div class="quote rise" style="--i:1">
+<p class="qt">« Pour les fabriquer, on pollue beaucoup. »</p>
+<p class="who">Julia, CM2</p>
+</div>
+<div class="quote rise" style="--i:2">
+<p class="qt">« C’est de limiter la pollution en arrêtant de jeter les ordinateurs. »</p>
+<p class="who">Lamar, CM2</p>
+</div>
+</div>
+<p class="small">Source : article de la gazette de Figeac, février 2026</p>
+<aside>Les élèves ont compris l’enjeu, et ils le disent avec leurs mots. Ces phrases sont tirées de l’article de la gazette de Figeac. Laisser un temps de silence après la lecture.</aside>
+</section>
+<section id="materiel" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Le kit pour se lancer</p>
+<h2>Un matériel simple et peu coûteux</h2>
+</div>
+<div class="grid4">
+<div class="card kit rise" style="--i:1"><x-icon name="CheckCircle" class="ico"></x-icon><p class="strong">4 à 6 PC</p><p class="small">Du même modèle si possible</p></div>
+<div class="card kit rise" style="--i:2"><x-icon name="Tool" class="ico"></x-icon><p class="strong">Tournevis</p><p class="small">Un par groupe</p></div>
+<div class="card kit rise" style="--i:3"><x-icon name="Cloud" class="ico"></x-icon><p class="strong">Souffleurs</p><p class="small">Pour chasser la poussière</p></div>
+<div class="card kit rise" style="--i:4"><x-icon name="Lightning" class="ico"></x-icon><p class="strong">Piles CR2032</p><p class="small">Une par machine</p></div>
+<div class="card kit rise" style="--i:5"><x-icon name="Database" class="ico"></x-icon><p class="strong">SSD 250 Go</p><p class="small">Une par machine, avec support si besoin</p></div>
+<div class="card kit rise" style="--i:6"><x-icon name="Key" class="ico"></x-icon><p class="strong">Clés USB</p><p class="small">Avec PrimTux, préparées par l’adulte</p></div>
+<div class="card kit rise" style="--i:7"><x-icon name="Book" class="ico"></x-icon><p class="strong">Cartes missions</p><p class="small">Et une feuille de suivi à cocher</p></div>
+<div class="card kit rise" style="--i:8"><x-icon name="Star" class="ico"></x-icon><p class="strong">Autocollants NIRD</p><p class="small">La touche finale</p></div>
+</div>
+<p class="small">Budget à prévoir avec la direction (à Figeac, la mairie a tout financé). Liste tirée du diaporama de bilan des élèves.</p>
+<aside>Voici le kit utilisé à Figeac, financé par la mairie : tournevis, souffleurs, piles CR2032, disques SSD de 250 Go, cartes missions et autocollants NIRD. J’ajoute les ordinateurs eux-mêmes et des clés USB avec PrimTux. Chez nous, le budget se voit avec la direction et les machines avec le service informatique. Conseil de l’équipe de Figeac : des machines identiques, c’est les mêmes vis, le même BIOS et les mêmes gestes.</aside>
+</section>
+<section id="reussite" class="alt" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Les leçons de Figeac</p>
+<h2>Quatre conditions de réussite</h2>
+</div>
+<div class="grid2">
+<div class="card rise" style="--i:1"><x-icon name="Home" class="ico"></x-icon><h3 class="t32">Direction et service informatique</h3><p class="small">La direction soutient et finance les pièces ; le service informatique fournit les PC et les intègre au réseau.</p></div>
+<div class="card rise" style="--i:2"><x-icon name="PaperPlane" class="ico"></x-icon><h3 class="t32">Des destinataires réels</h3><p class="small">Une autre classe, le CDI, des familles : c’est ce qui motive les élèves.</p></div>
+<div class="card rise" style="--i:3"><x-icon name="Users" class="ico"></x-icon><h3 class="t32">Des renforts, au début</h3><p class="small">Un collègue, des lycéens de l’établissement, des parents volontaires, puis de moins en moins.</p></div>
+<div class="card rise" style="--i:4"><x-icon name="Clock" class="ico"></x-icon><h3 class="t32">Commencer petit</h3><p class="small">4 à 6 machines identiques, en demi-classe ou en APC, sur plusieurs jours.</p></div>
+</div>
+<aside>Quatre conditions, toutes présentes à Figeac, adaptées à notre établissement. La direction et le service informatique, d’abord : à Figeac c’était la mairie, chez nous ce sont eux qui fournissent les machines, financent les pièces et intègrent les postes au réseau. Des destinataires réels, ensuite. Des renforts au début : un atout d’un établissement de la maternelle au lycée, des lycéens peuvent accompagner les plus jeunes. Et commencer petit : l’équipe de Figeac le dit elle-même après une première séance réussie mais très chargée.</aside>
+</section>
+<section id="demarrer" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Passer à l’action</p>
+<h2>Démarrer en 4 étapes</h2>
+</div>
+<div class="go">
+<div class="card rise" style="--i:1"><div class="num"><p>1</p></div><h3 class="t32">En parler</h3><p class="small">À l’équipe, à la direction et au service informatique.</p></div>
+<div class="card rise" style="--i:2"><div class="num"><p>2</p></div><h3 class="t32">Obtenir un lot</h3><p class="small">4 à 6 PC du même modèle, avec le service informatique.</p></div>
+<div class="card rise" style="--i:3"><div class="num"><p>3</p></div><h3 class="t32">Préparer le kit</h3><p class="small">Clés USB PrimTux, pièces, cartes missions.</p></div>
+<div class="card rise" style="--i:4"><div class="num act"><p>4</p></div><h3 class="t32">Choisir un destinataire</h3><p class="small">Une autre classe, le CDI, des familles.</p></div>
+</div>
+<div class="calendar rise" style="--i:5">
+<x-icon name="Clock"></x-icon>
+<p><b>Un calendrier possible :</b> apprendre en novembre-décembre, premier lot en janvier, équipes d’experts au printemps, bilan avant juin.</p>
+</div>
+<aside>Pour se lancer, quatre étapes : en parler à l’équipe, à la direction et au service informatique, obtenir avec lui un petit lot de machines identiques parmi celles que l’établissement renouvelle, préparer le kit, et choisir tout de suite un premier destinataire. Programmer les temps forts avant juin : à Figeac, une visite au collège a été annulée pour cause de canicule.</aside>
+</section>
+<section id="rejoindre" class="accent" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Rejoindre la démarche</p>
+<h2>On ne part pas seul</h2>
+</div>
+<div class="closing">
+<div class="links">
+<div class="linkcard rise" style="--i:1"><p><b>Le site de la démarche NIRD</b></p><p class="small"><a href="https://nird.forge.apps.education.fr/index.html">nird.forge.apps.education.fr</a></p></div>
+<div class="linkcard rise" style="--i:2"><p><b>Le forum Tchap, pour se faire aider</b></p><p class="small"><a href="https://edurl.fr/tchap-laforgeedu-nird">edurl.fr/tchap-laforgeedu-nird</a></p></div>
+<div class="linkcard rise" style="--i:3"><p><b>Le carnet de bord de l’école Louis Barrié</b></p><p class="small"><a href="https://docs.numerique.gouv.fr/docs/79015c89-73d8-477f-928c-612d00820e0b/">docs.numerique.gouv.fr</a></p></div>
+<div class="linkcard rise" style="--i:4"><p><b>PrimTux, le système des écoles</b></p><p class="small"><a href="https://nird.forge.apps.education.fr/linux/">nird.forge.apps.education.fr/linux</a></p></div>
+</div>
+<div class="pop" style="--i:3;width:520px;display:flex;flex-direction:column;gap:24px">
+<p class="ask">Vos questions ?</p>
+<p>Et vous, avec quel lot, et pour quel destinataire ?</p>
+</div>
+</div>
+<aside>Pour conclure : la démarche est portée par un collectif d’enseignants, avec un forum Tchap pour l’entraide. Le carnet de bord de l’école Louis Barrié détaille toutes les séances. Ouvrir les questions, puis faire un tour de table : qui se lance, avec quel lot de machines, et pour quel destinataire ?</aside>
+</section>
+</div>
+<div id="notes"></div>
+<div id="hint">← → pour avancer · N : notes · F : plein écran</div>
+<div id="bar">
+  <button id="prev" aria-label="Diapositive précédente">←</button>
+  <span id="count"></span>
+  <button id="next" aria-label="Diapositive suivante">→</button>
+  <button id="nbtn">Notes</button>
+  <button id="fbtn">Plein écran</button>
+  <a href="index.html" style="color:#F2A65A;text-decoration:none;padding:0 8px">Site</a>
+</div>
+<script>
+(function(){
+  var I={
+    Activity:'<path d="M3 12h4l3-8 4 16 3-8h4"/>',
+    Book:'<path d="M4 5c3-1.5 6-1.5 8 0v15c-2-1.5-5-1.5-8 0V5zM20 5c-3-1.5-6-1.5-8 0v15c2-1.5 5-1.5 8 0V5z"/>',
+    Chat:'<path d="M4 5h16v11H9l-5 4V5z"/><path d="M8 9h8M8 12h5"/>',
+    CheckCircle:'<circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/>',
+    Clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    Cloud:'<path d="M7 18a4 4 0 0 1-.6-8 6 6 0 0 1 11.4 1.5A3.5 3.5 0 0 1 17.5 18H7z"/>',
+    Code:'<path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>',
+    Database:'<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',
+    Globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>',
+    Home:'<path d="M3 11l9-7 9 7v9H5v-9"/><path d="M10 20v-6h4v6"/>',
+    Key:'<circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/>',
+    Lightbulb:'<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>',
+    Lightning:'<path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/>',
+    Link:'<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+    PaperPlane:'<path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>',
+    Search:'<circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/>',
+    Settings:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>',
+    Star:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z"/>',
+    ThumbsUp:'<path d="M7 10v11H3V10h4zM7 10l4-8a2.5 2.5 0 0 1 3 3l-1 5h6a2 2 0 0 1 2 2.3l-1.5 7A2 2 0 0 1 17.5 21H7"/>',
+    Tool:'<path d="M15 4a5 5 0 0 0-4.6 6.9L4 17.3V20h2.7l6.4-6.4A5 5 0 0 0 20 9l-3 1-2-2 1-3z"/>',
+    Users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16.5 14.2c2.8.3 5 2.4 5 5.8"/>',
+    Verified:'<path d="M12 2l2.5 2.2 3.3-.3.8 3.2 2.9 1.7-1.3 3.2 1.3 3.2-2.9 1.7-.8 3.2-3.3-.3L12 22l-2.5-2.2-3.3.3-.8-3.2-2.9-1.7 1.3-3.2L2.5 8.8l2.9-1.7.8-3.2 3.3.3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+    Warning:'<path d="M12 3l10 18H2L12 3z"/><path d="M12 10v5M12 18v.5"/>',
+    Wrench:'<path d="M15 4a5 5 0 0 0-4.6 6.9L4 17.3V20h2.7l6.4-6.4A5 5 0 0 0 20 9l-3 1-2-2 1-3z"/>'
+  };
+  document.querySelectorAll('x-icon').forEach(function(x){
+    x.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(I[x.getAttribute('name')]||I.Star)+'</svg>';
+  });
+  var S=[].slice.call(document.querySelectorAll('#stage > section')), i=0, stage=document.getElementById('stage');
+  var notes=document.getElementById('notes'), count=document.getElementById('count');
+  function fit(){var k=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform='translate(-50%,-50%) scale('+k+')';}
+  function show(n){
+    i=Math.max(0,Math.min(S.length-1,n));
+    S.forEach(function(s,j){s.classList.toggle('cur',j===i);});
+    count.textContent=(i+1)+' / '+S.length;
+    var a=S[i].querySelector('aside'); notes.innerHTML='<b>Notes ·</b> '+(a?a.textContent:'');
+    try{history.replaceState(null,'','#'+(i+1));}catch(e){}
+  }
+  function fs(){try{if(!document.fullscreenElement)document.documentElement.requestFullscreen();else document.exitFullscreen();}catch(e){}}
+  document.getElementById('prev').onclick=function(){show(i-1);};
+  document.getElementById('next').onclick=function(){show(i+1);};
+  document.getElementById('nbtn').onclick=function(){notes.classList.toggle('on');};
+  document.getElementById('fbtn').onclick=fs;
+  stage.addEventListener('click',function(e){if(!e.target.closest('a'))show(i+1);});
+  addEventListener('keydown',function(e){
+    if(['ArrowRight','PageDown',' ','Enter'].indexOf(e.key)>=0){e.preventDefault();show(i+1);}
+    else if(['ArrowLeft','PageUp','Backspace'].indexOf(e.key)>=0){e.preventDefault();show(i-1);}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(S.length-1);
+    else if(e.key==='n'||e.key==='N')notes.classList.toggle('on');
+    else if(e.key==='f'||e.key==='F')fs();
+  });
+  var t0=0; addEventListener('touchstart',function(e){t0=e.touches[0].clientX;},{passive:true});
+  addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-t0;if(Math.abs(d)>50)show(i+(d<0?1:-1));});
+  addEventListener('hashchange',function(){var n=(parseInt(location.hash.slice(1),10)||1)-1;if(n!==i)show(n);});
+  addEventListener('resize',fit); fit();
+  show((parseInt(location.hash.slice(1),10)||1)-1);
+})();
+</script>
+</body>
+</html>

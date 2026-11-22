@@ -39,7 +39,13 @@
     'ressource': 'Ressource : ce que l’on prend dans la nature pour fabriquer des objets : métaux, eau, pétrole, sable…',
     'mine': 'Mine : un endroit où l’on creuse la terre pour en extraire des métaux ou des minerais.',
     'co2': 'Gaz à effet de serre : des gaz qui réchauffent la planète. On compte leur quantité en kilos d’« équivalent CO₂ » (kg CO₂e).',
-    'cycle-de-vie': 'Cycle de vie : toutes les étapes de la vie d’un objet : on le fabrique, on l’utilise, puis il devient un déchet.'
+    'cycle-de-vie': 'Cycle de vie : toutes les étapes de la vie d’un objet : on le fabrique, on l’utilise, puis il devient un déchet.',
+    'argument': 'Argument : une raison que l’on donne pour défendre son avis.',
+    'donnees': 'Données personnelles : les informations qui concernent une personne : son nom, son adresse, ses photos, ses messages… Elles lui appartiennent.',
+    'bios': 'BIOS : un petit programme rangé sur la carte mère. Il se réveille en premier quand on allume l’ordinateur, vérifie les pièces, puis lance le système d’exploitation.',
+    'installer': 'Installer : copier un logiciel sur l’ordinateur et le préparer pour qu’il puisse fonctionner.',
+    'carte-mission': 'Carte mission : une fiche qui explique, étape par étape, comment réaliser une tâche.',
+    'role': 'Rôle : la tâche dont une personne est responsable dans un groupe.'
   };
 
 
@@ -71,6 +77,9 @@
     warn:'<path d="M12 3l10 18H2L12 3z"/><path d="M12 10v5M12 18v.5"/>',
     hand:'<path d="M8 13V5a1.5 1.5 0 0 1 3 0v6M11 10V4a1.5 1.5 0 0 1 3 0v6M14 10V5a1.5 1.5 0 0 1 3 0v8c0 4-2.5 7-6 7s-5-2-6.5-4.5L3 12a1.5 1.5 0 0 1 2.5-1.6L8 13"/>',
     battery:'<rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10v4M7 10v4M11 10v4"/>',
+    clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>',
+    list:'<path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.5M4 12h.5M4 18h.5"/>',
     arrows:'<path d="M4 12h14M14 8l4 4-4 4"/><path d="M4 6h6M4 18h6"/>'
   };
   function icon(n) {
@@ -93,7 +102,8 @@
     'disque':'photo:Laptop-hard-drive-exposed.jpg','ssd':'photo:Samsung_SSD_850_PRO_512GB.jpg','memoire':'photo:Computer_from_inside_018.jpg','cle-usb':'photo:Maxell_USB_flash_drive.jpg',
     'processeur':'photo:AMD_Ryzen_5_1600_processor_with_Wraith_Spire_cooler_-_detail_view_of_processor.jpg','ventilateur':'photo:CPU_fan_and_heatsink.jpg',
     'bloc-alim':'photo:ATX_Computer_power_supply_unit.jpg','panne':'icon:warn','experience':'icon:eye','ressource':'icon:box','mine':'photo:Chino_copper_mine.jpg',
-    'co2':'icon:cloud','cycle-de-vie':'icon:refresh'
+    'co2':'icon:cloud','cycle-de-vie':'icon:refresh','argument':'icon:chat','donnees':'icon:lock','bios':'icon:gear','installer':'photo:Maxell_USB_flash_drive.jpg',
+    'carte-mission':'icon:book','role':'icon:users'
   };
   function initIllustrations() {
     $$('.mot-card[data-ill]').forEach(function (c) {
@@ -128,7 +138,7 @@
   }
 
   /* ---------- Navigation par ancre ---------- */
-  var VIEWS = ['accueil', 'sequence', 'seance-1', 'seance-2', 'seance-3', 'seance-4', 'seance-5', 'seance-6', 'lexique', 'credits'];
+  var VIEWS = ['accueil', 'sequence', 'seance-1', 'seance-2', 'seance-3', 'seance-4', 'seance-5', 'seance-6', 'seance-7', 'seance-8', 'seance-9', 'seance-10', 'lexique', 'credits'];
   function route() {
     var h = (location.hash || '#accueil').slice(1);
     if (VIEWS.indexOf(h) < 0) h = 'accueil';
@@ -325,7 +335,8 @@
       'video': 'Câble vidéo', 'port': 'Port', 'hypothese': 'Hypothèse', 'inventeur': 'Inventeur, inventrice', 'carte-mere': 'Carte mère',
       'pile': 'Pile de la carte mère', 'disque': 'Disque dur', 'ssd': 'SSD', 'memoire': 'Mémoire vive', 'cle-usb': 'Clé USB',
       'processeur': 'Processeur', 'ventilateur': 'Ventilateur', 'bloc-alim': 'Bloc d’alimentation', 'panne': 'Panne', 'experience': 'Expérience',
-      'ressource': 'Ressource', 'mine': 'Mine', 'co2': 'Gaz à effet de serre', 'cycle-de-vie': 'Cycle de vie'
+      'ressource': 'Ressource', 'mine': 'Mine', 'co2': 'Gaz à effet de serre', 'cycle-de-vie': 'Cycle de vie',
+      'argument': 'Argument', 'donnees': 'Données personnelles', 'bios': 'BIOS', 'installer': 'Installer', 'carte-mission': 'Carte mission', 'role': 'Rôle'
     };
     var keys = Object.keys(names).sort(function (a, b) { return names[a].localeCompare(names[b], 'fr'); });
     box.innerHTML = keys.map(function (k) {

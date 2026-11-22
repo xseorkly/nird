@@ -7,7 +7,8 @@ Site en ligne : https://xseorkly.github.io/nird/
 ## Contenu
 
 - **Le projet** : présentation de la démarche NIRD, des trois piliers et des établissements pilotes.
-- **La séquence** : 14 séances en 5 phases. Les séances 1 à 6 sont rédigées.
+- **La séquence** : 14 séances en 5 phases. Les séances 1 à 10 sont rédigées.
+- **Présentation** (`presentation.html`) : le diaporama de présentation du projet aux enseignants, avec les notes de l'orateur (touche N).
 - **Espace élève** : fiches à remplir en ligne (enregistrées sur l'appareil de l'élève, rien n'est envoyé), auto-correction, impression.
 - **Espace enseignant** : objectifs, matériel, déroulé minuté, corrigés, liens avec les programmes (sciences et technologie 2026, EMC 2024, EDD, CRCN).
 - **Les mots** : lexique des mots techniques expliqués pour des élèves de 9-10 ans.

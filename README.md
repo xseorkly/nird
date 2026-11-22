@@ -24,4 +24,4 @@ Les photos sont chargées depuis Wikimedia Commons ; auteurs et licences sont li
 Le site est publié automatiquement sur GitHub Pages à chaque envoi sur la branche `main`.
 
 ---
-EF2D Technologie Fehmi KLABI – Groupe EducFi AEFE · Contenus sous licence CC BY 4.0
+EF2D Technologie Fehmi KLABI – Formateur zones Europe ZECO et ZESE · Contenus sous licence CC BY 4.0

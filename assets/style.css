@@ -278,3 +278,10 @@ footer a{color:var(--amber)}
 .logos img{height:30px}
 @media (max-width:1360px){.nav a{padding-left:9px;padding-right:9px}.logos img.irf{display:none}}
 @media (max-width:1100px){.brand-txt{display:none}}
+.brand-logo{height:40px;width:auto;display:block}
+.brand{gap:10px}
+@media (max-width:600px){.brand-logo{height:30px}}
+.brand{flex-shrink:0}
+.brand-logo{height:46px;max-width:none;flex-shrink:0}
+@media (max-width:600px){.brand-logo{height:34px}.logos img{height:24px}}
+@media (max-width:480px){.logos{display:none}}

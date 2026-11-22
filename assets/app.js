@@ -45,7 +45,13 @@
     'bios': 'BIOS : un petit programme rangé sur la carte mère. Il se réveille en premier quand on allume l’ordinateur, vérifie les pièces, puis lance le système d’exploitation.',
     'installer': 'Installer : copier un logiciel sur l’ordinateur et le préparer pour qu’il puisse fonctionner.',
     'carte-mission': 'Carte mission : une fiche qui explique, étape par étape, comment réaliser une tâche.',
-    'role': 'Rôle : la tâche dont une personne est responsable dans un groupe.'
+    'role': 'Rôle : la tâche dont une personne est responsable dans un groupe.',
+    'documenter': 'Documenter : garder une trace de son travail (photos, textes, dessins) pour pouvoir l’expliquer aux autres.',
+    'public': 'Public : les personnes qui écoutent un exposé ou regardent une présentation.',
+    'programme': 'Programme : une suite d’instructions, dans l’ordre, qui dit à l’ordinateur ce qu’il doit faire.',
+    'scratch': 'Scratch : un logiciel pour programmer en assemblant des blocs, comme des pièces de puzzle. Il est installé dans PrimTux.',
+    'boucle': 'Boucle : un bloc qui fait répéter des instructions plusieurs fois.',
+    'condition': 'Condition : un bloc « si… alors » : les instructions ne s’exécutent que si quelque chose est vrai.'
   };
 
 
@@ -80,6 +86,9 @@
     clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
     gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>',
     list:'<path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.5M4 12h.5M4 18h.5"/>',
+    camera:'<path d="M3 8h4l2-3h6l2 3h4v11H3V8z"/><circle cx="12" cy="13" r="3.5"/>',
+    heart:'<path d="M12 20s-7-4.4-9-9a4.5 4.5 0 0 1 9-3 4.5 4.5 0 0 1 9 3c-2 4.6-9 9-9 9z"/>',
+    flag:'<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
     arrows:'<path d="M4 12h14M14 8l4 4-4 4"/><path d="M4 6h6M4 18h6"/>'
   };
   function icon(n) {
@@ -103,7 +112,8 @@
     'processeur':'photo:AMD_Ryzen_5_1600_processor_with_Wraith_Spire_cooler_-_detail_view_of_processor.jpg','ventilateur':'photo:CPU_fan_and_heatsink.jpg',
     'bloc-alim':'photo:ATX_Computer_power_supply_unit.jpg','panne':'icon:warn','experience':'icon:eye','ressource':'icon:box','mine':'photo:Chino_copper_mine.jpg',
     'co2':'icon:cloud','cycle-de-vie':'icon:refresh','argument':'icon:chat','donnees':'icon:lock','bios':'icon:gear','installer':'photo:Maxell_USB_flash_drive.jpg',
-    'carte-mission':'icon:book','role':'icon:users'
+    'carte-mission':'icon:book','role':'icon:users','documenter':'icon:camera','public':'icon:users','programme':'icon:code','scratch':'icon:code',
+    'boucle':'icon:refresh','condition':'icon:question'
   };
   function initIllustrations() {
     $$('.mot-card[data-ill]').forEach(function (c) {
@@ -138,7 +148,7 @@
   }
 
   /* ---------- Navigation par ancre ---------- */
-  var VIEWS = ['accueil', 'sequence', 'seance-1', 'seance-2', 'seance-3', 'seance-4', 'seance-5', 'seance-6', 'seance-7', 'seance-8', 'seance-9', 'seance-10', 'lexique', 'credits'];
+  var VIEWS = ['accueil', 'sequence', 'seance-1', 'seance-2', 'seance-3', 'seance-4', 'seance-5', 'seance-6', 'seance-7', 'seance-8', 'seance-9', 'seance-10', 'seance-11', 'seance-12', 'seance-13', 'seance-14', 'lexique', 'credits'];
   function route() {
     var h = (location.hash || '#accueil').slice(1);
     if (VIEWS.indexOf(h) < 0) h = 'accueil';
@@ -336,7 +346,8 @@
       'pile': 'Pile de la carte mère', 'disque': 'Disque dur', 'ssd': 'SSD', 'memoire': 'Mémoire vive', 'cle-usb': 'Clé USB',
       'processeur': 'Processeur', 'ventilateur': 'Ventilateur', 'bloc-alim': 'Bloc d’alimentation', 'panne': 'Panne', 'experience': 'Expérience',
       'ressource': 'Ressource', 'mine': 'Mine', 'co2': 'Gaz à effet de serre', 'cycle-de-vie': 'Cycle de vie',
-      'argument': 'Argument', 'donnees': 'Données personnelles', 'bios': 'BIOS', 'installer': 'Installer', 'carte-mission': 'Carte mission', 'role': 'Rôle'
+      'argument': 'Argument', 'donnees': 'Données personnelles', 'bios': 'BIOS', 'installer': 'Installer', 'carte-mission': 'Carte mission', 'role': 'Rôle',
+      'documenter': 'Documenter', 'public': 'Public', 'programme': 'Programme', 'scratch': 'Scratch', 'boucle': 'Boucle', 'condition': 'Condition'
     };
     var keys = Object.keys(names).sort(function (a, b) { return names[a].localeCompare(names[b], 'fr'); });
     box.innerHTML = keys.map(function (k) {

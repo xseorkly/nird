@@ -236,12 +236,28 @@ footer a{color:var(--amber)}
 
 /* ===== Zone de dessin ===== */
 .draw{border:2px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
-.draw-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px;background:var(--paper);border-bottom:2px solid var(--line)}
-.draw canvas{display:block;width:100%;height:auto;touch-action:none;cursor:crosshair;background:#fff}
-.swatch{width:32px;height:32px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--line);cursor:pointer}
-.swatch.on{box-shadow:0 0 0 3px var(--ink)}
-.tbtn{border:2px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;font:700 .85rem var(--text);cursor:pointer;color:var(--ink)}
-.tbtn.on,.tbtn.on2{background:var(--forest);color:var(--paper);border-color:var(--forest)}
+.draw-tools{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:10px 12px;background:var(--paper);border-bottom:2px solid var(--line)}
+.dt-group{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.dt-group{padding-right:6px}
+.dt-label{width:100%;font:800 .68rem var(--text);letter-spacing:.08em;text-transform:uppercase;color:var(--rust)}
+.dbtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:40px;height:40px;padding:0 9px;border:2px solid var(--line);background:#fff;border-radius:12px;font:700 .85rem var(--text);color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.dbtn svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.dbtn:hover{border-color:var(--forest2)}
+.dbtn.on{background:var(--forest);color:var(--paper);border-color:var(--forest)}
+.dbtn:disabled{opacity:.35;cursor:default}
+.dbtn .sz{display:block;border-radius:50%;background:currentColor}
+.dt-colors{max-width:290px}
+.dbtn.swatch{width:30px;min-width:30px;height:30px;padding:0;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--line)}
+.dbtn.swatch.on{box-shadow:0 0 0 3px var(--ink)}
+.dbtn.picker{position:relative;overflow:hidden;width:30px;min-width:30px;height:30px;padding:0;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--line);background:conic-gradient(#D33A2C,#F2C230,#6BAF73,#3A6EA5,#7B4FA0,#E77FA8,#D33A2C)}
+.dbtn.picker input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;border:0;padding:0}
+.draw-hint{min-height:1.5em;padding:6px 14px;font-size:.88rem;font-weight:700;color:var(--forest2);background:#FBF8F0;border-bottom:1px solid var(--line)}
+.draw-hint.edit{color:#fff;background:var(--blue)}
+.draw-stage{position:relative}
+.draw-stage canvas{display:block;width:100%;height:auto;background:#fff}
+.draw-stage .cv-over{position:absolute;left:0;top:0;height:100%;background:transparent;touch-action:none;cursor:crosshair}
+.draw-text{position:absolute;z-index:2;margin:0;padding:0;border:0;outline:2px dashed var(--blue);outline-offset:3px;background:rgba(255,255,255,.85);line-height:1.15;font-family:"Nunito Sans",Verdana,sans-serif;font-weight:700;min-width:140px}
+@media (max-width:700px){.dbtn span{display:none}}
 /* graphiques en barres (séance 6) */
 .bars{display:grid;gap:14px;margin:12px 0}
 .bar-row{display:grid;grid-template-columns:200px 1fr;gap:14px;align-items:center}
@@ -258,7 +274,7 @@ footer a{color:var(--amber)}
 .piece select{width:100%}
 .order-row{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
 @media (max-width:900px){.safety{grid-template-columns:1fr 1fr}.bar-row{grid-template-columns:1fr}}
-@media print{.draw{border:1px solid #999}.draw canvas{max-height:90mm;width:auto;max-width:100%}}
+@media print{.draw{border:1px solid #999}.draw .draw-stage canvas.cv-main{max-height:90mm;width:auto;max-width:100%}}
 .sort-row.stack{grid-template-columns:1fr;padding:12px}
 .sort-row.stack > span{font-weight:700}
 .deck-frame{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#0F1D16;margin:20px 0}

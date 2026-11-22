@@ -233,3 +233,31 @@ footer a{color:var(--amber)}
 .allwords{font-weight:800;font-size:.95rem}
 @media (max-width:600px){.readcard{flex-direction:column;align-items:flex-start}}
 @media print{.mot-ill{height:80px}.readcard{background:#fff;color:#000;border:1px solid #000}.readcard h3{color:#000}}
+
+/* ===== Zone de dessin ===== */
+.draw{border:2px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.draw-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px;background:var(--paper);border-bottom:2px solid var(--line)}
+.draw canvas{display:block;width:100%;height:auto;touch-action:none;cursor:crosshair;background:#fff}
+.swatch{width:32px;height:32px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--line);cursor:pointer}
+.swatch.on{box-shadow:0 0 0 3px var(--ink)}
+.tbtn{border:2px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;font:700 .85rem var(--text);cursor:pointer;color:var(--ink)}
+.tbtn.on,.tbtn.on2{background:var(--forest);color:var(--paper);border-color:var(--forest)}
+/* graphiques en barres (séance 6) */
+.bars{display:grid;gap:14px;margin:12px 0}
+.bar-row{display:grid;grid-template-columns:200px 1fr;gap:14px;align-items:center}
+.bar-track{display:flex;height:38px;border-radius:10px;overflow:hidden;background:var(--paper2)}
+.bar-fab{background:var(--rust);color:#fff;display:flex;align-items:center;padding-left:10px;font-weight:800;font-size:.9rem;white-space:nowrap}
+.bar-use{background:var(--amber);color:var(--deep);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem}
+.legend{display:flex;gap:18px;font-weight:700;font-size:.9rem}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:-2px}
+.safety{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.safety div{background:#FFF4E5;border:2px solid var(--amber);border-radius:14px;padding:12px;font-weight:700;display:flex;gap:10px;align-items:center}
+.safety .ic{background:var(--amber);color:var(--deep)}
+.piece{background:var(--paper);border:2px solid var(--line);border-radius:16px;padding:10px}
+.piece .photo{aspect-ratio:4/3;margin-bottom:10px}
+.piece select{width:100%}
+.order-row{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+@media (max-width:900px){.safety{grid-template-columns:1fr 1fr}.bar-row{grid-template-columns:1fr}}
+@media print{.draw{border:1px solid #999}.draw canvas{max-height:90mm;width:auto;max-width:100%}}
+.sort-row.stack{grid-template-columns:1fr;padding:12px}
+.sort-row.stack > span{font-weight:700}

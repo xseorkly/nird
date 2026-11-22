@@ -30,7 +30,16 @@
     'disque': 'Disque dur : la pièce qui garde en mémoire les fichiers (photos, textes, logiciels) même quand l’ordinateur est éteint.',
     'ssd': 'SSD : une sorte de disque dur moderne, sans pièce qui tourne. Il est plus rapide, plus léger et moins fragile.',
     'memoire': 'Mémoire vive : la mémoire de travail de l’ordinateur. Elle s’efface quand on l’éteint.',
-    'cle-usb': 'Clé USB : un petit objet qui garde des fichiers et qu’on branche sur un port USB.'
+    'cle-usb': 'Clé USB : un petit objet qui garde des fichiers et qu’on branche sur un port USB.',
+    'processeur': 'Processeur : la pièce qui fait tous les calculs. C’est un peu le « cerveau » de l’ordinateur.',
+    'ventilateur': 'Ventilateur : une petite hélice qui souffle de l’air pour refroidir les pièces qui chauffent.',
+    'bloc-alim': 'Bloc d’alimentation : la boîte métallique, dans l’unité centrale, qui transforme l’électricité de la prise pour toutes les pièces. On ne l’ouvre jamais : elle garde de l’électricité même débranchée.',
+    'panne': 'Panne : quand un appareil ne fonctionne plus normalement.',
+    'experience': 'Expérience : un test que l’on fait pour vérifier si une hypothèse est juste.',
+    'ressource': 'Ressource : ce que l’on prend dans la nature pour fabriquer des objets : métaux, eau, pétrole, sable…',
+    'mine': 'Mine : un endroit où l’on creuse la terre pour en extraire des métaux ou des minerais.',
+    'co2': 'Gaz à effet de serre : des gaz qui réchauffent la planète. On compte leur quantité en kilos d’« équivalent CO₂ » (kg CO₂e).',
+    'cycle-de-vie': 'Cycle de vie : toutes les étapes de la vie d’un objet : on le fabrique, on l’utilise, puis il devient un déchet.'
   };
 
 
@@ -58,6 +67,10 @@
     star:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z"/>',
     question:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .8-1 1.7M12 17v.5"/>',
     bookmark:'<path d="M6 3h12v18l-6-4-6 4V3z"/>',
+    cloud:'<path d="M7 18a4 4 0 0 1-.6-8 6 6 0 0 1 11.4 1.5A3.5 3.5 0 0 1 17.5 18H7z"/>',
+    warn:'<path d="M12 3l10 18H2L12 3z"/><path d="M12 10v5M12 18v.5"/>',
+    hand:'<path d="M8 13V5a1.5 1.5 0 0 1 3 0v6M11 10V4a1.5 1.5 0 0 1 3 0v6M14 10V5a1.5 1.5 0 0 1 3 0v8c0 4-2.5 7-6 7s-5-2-6.5-4.5L3 12a1.5 1.5 0 0 1 2.5-1.6L8 13"/>',
+    battery:'<rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10v4M7 10v4M11 10v4"/>',
     arrows:'<path d="M4 12h14M14 8l4 4-4 4"/><path d="M4 6h6M4 18h6"/>'
   };
   function icon(n) {
@@ -77,7 +90,10 @@
     'peripherique':'photo:IBM_Model_M_keyboard_(PS-2)_and_mouse.jpg','entree':'photo:IBM_Model_M_keyboard_(PS-2)_and_mouse.jpg','sortie':'photo:Computer_monitor.jpg',
     'alimentation':'photo:Cable-secteur.JPG','video':'photo:HDMI_Cable.JPG','port':'photo:PS2_keyboard_and_mouse_ports.jpg','hypothese':'icon:bulb',
     'inventeur':'icon:bulb','carte-mere':'photo:Computer_Motherboard_Closeup.jpg','pile':'photo:CR2032_battery,_Mitsubishi,_computer_backup_battery-2423.jpg',
-    'disque':'photo:Laptop-hard-drive-exposed.jpg','ssd':'photo:Samsung_SSD_850_PRO_512GB.jpg','memoire':'photo:Computer_from_inside_018.jpg','cle-usb':'photo:Maxell_USB_flash_drive.jpg'
+    'disque':'photo:Laptop-hard-drive-exposed.jpg','ssd':'photo:Samsung_SSD_850_PRO_512GB.jpg','memoire':'photo:Computer_from_inside_018.jpg','cle-usb':'photo:Maxell_USB_flash_drive.jpg',
+    'processeur':'photo:AMD_Ryzen_5_1600_processor_with_Wraith_Spire_cooler_-_detail_view_of_processor.jpg','ventilateur':'photo:CPU_fan_and_heatsink.jpg',
+    'bloc-alim':'photo:ATX_Computer_power_supply_unit.jpg','panne':'icon:warn','experience':'icon:eye','ressource':'icon:box','mine':'photo:Chino_copper_mine.jpg',
+    'co2':'icon:cloud','cycle-de-vie':'icon:refresh'
   };
   function initIllustrations() {
     $$('.mot-card[data-ill]').forEach(function (c) {
@@ -112,7 +128,7 @@
   }
 
   /* ---------- Navigation par ancre ---------- */
-  var VIEWS = ['accueil', 'sequence', 'seance-1', 'seance-2', 'seance-3', 'lexique', 'credits'];
+  var VIEWS = ['accueil', 'sequence', 'seance-1', 'seance-2', 'seance-3', 'seance-4', 'seance-5', 'seance-6', 'lexique', 'credits'];
   function route() {
     var h = (location.hash || '#accueil').slice(1);
     if (VIEWS.indexOf(h) < 0) h = 'accueil';
@@ -180,6 +196,49 @@
     });
   }
 
+
+  /* ---------- Zones de dessin (souris, doigt ou stylet) ---------- */
+  var COLORS = ['#1F3A2E', '#B4531A', '#3A6EA5', '#3E7A4A', '#E8833A'];
+  function initDraw() {
+    $$('.draw[data-k]').forEach(function (box) {
+      var key = 'f-' + box.getAttribute('data-k');
+      box.innerHTML = '<div class="draw-tools no-print"></div><canvas width="1200" height="520" aria-label="Zone de dessin"></canvas>';
+      var tools = box.querySelector('.draw-tools'), cv = box.querySelector('canvas'), cx = cv.getContext('2d');
+      var color = COLORS[0], size = 5, eraser = false, drawing = false, last = null;
+      COLORS.forEach(function (c, i) {
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'swatch' + (i === 0 ? ' on' : '');
+        b.style.background = c; b.setAttribute('aria-label', 'Couleur ' + (i + 1));
+        b.addEventListener('click', function () { color = c; eraser = false; mark(b); });
+        tools.appendChild(b);
+      });
+      [['Fin', 4], ['Épais', 10]].forEach(function (t, i) {
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'tbtn' + (i === 0 ? ' on2' : ''); b.textContent = t[0];
+        b.addEventListener('click', function () { size = t[1]; $$('.tbtn', tools).forEach(function (x) { x.classList.remove('on2'); }); b.classList.add('on2'); });
+        tools.appendChild(b);
+      });
+      var er = document.createElement('button'); er.type = 'button'; er.className = 'tbtn'; er.textContent = 'Gomme';
+      er.addEventListener('click', function () { eraser = true; mark(er); }); tools.appendChild(er);
+      var cl = document.createElement('button'); cl.type = 'button'; cl.className = 'tbtn'; cl.textContent = 'Tout effacer';
+      cl.addEventListener('click', function () { clearCanvas(); drop(key); }); tools.appendChild(cl);
+      function mark(b) { $$('.swatch, .tbtn', tools).forEach(function (x) { x.classList.remove('on'); }); b.classList.add('on'); }
+      function clearCanvas() { cx.fillStyle = '#fff'; cx.fillRect(0, 0, cv.width, cv.height); }
+      function pos(e) { var r = cv.getBoundingClientRect(); return { x: (e.clientX - r.left) * cv.width / r.width, y: (e.clientY - r.top) * cv.height / r.height }; }
+      clearCanvas();
+      var saved = load(key);
+      if (saved) { var im = new Image(); im.onload = function () { cx.drawImage(im, 0, 0); }; im.src = saved; }
+      cv.addEventListener('pointerdown', function (e) { drawing = true; last = pos(e); cv.setPointerCapture(e.pointerId); dot(last); });
+      cv.addEventListener('pointermove', function (e) { if (!drawing) return; var p = pos(e); line(last, p); last = p; });
+      function end() { if (!drawing) return; drawing = false; store(key, cv.toDataURL('image/png')); flash(); }
+      cv.addEventListener('pointerup', end); cv.addEventListener('pointercancel', end); cv.addEventListener('pointerleave', end);
+      function line(a, b) {
+        cx.strokeStyle = eraser ? '#fff' : color; cx.lineWidth = eraser ? 30 : size; cx.lineCap = 'round'; cx.lineJoin = 'round';
+        cx.beginPath(); cx.moveTo(a.x, a.y); cx.lineTo(b.x, b.y); cx.stroke();
+      }
+      function dot(a) { line(a, { x: a.x + 0.1, y: a.y + 0.1 }); }
+      box._clear = clearCanvas;
+    });
+  }
+
   /* ---------- Effacer une fiche (boîte de dialogue maison) ---------- */
   var pendingClear = null;
   function askClear(view) {
@@ -190,11 +249,13 @@
     if (!pendingClear) return;
     $$('[data-k]', pendingClear).forEach(function (el) {
       drop(fieldKey(el));
+      if (el.classList.contains('draw')) return;
       if (el.classList.contains('write')) el.innerText = '';
       else if (el.type === 'checkbox' || el.type === 'radio') el.checked = false;
       else el.value = '';
     });
     $$('.ident input[data-id]').forEach(function (el) { el.value = ''; });
+    $$('.draw', pendingClear).forEach(function (d) { if (d._clear) d._clear(); });
     $$('.feedback', pendingClear).forEach(function (f) { f.textContent = ''; f.className = 'feedback'; });
     $$('.sort-row', pendingClear).forEach(function (r) { r.classList.remove('good', 'bad'); });
     $('#modal').classList.remove('on');
@@ -262,7 +323,9 @@
       'reconditionner': 'Reconditionner', 'dechet': 'Déchet électronique', 'recycler': 'Recycler', 'unite-centrale': 'Unité centrale',
       'peripherique': 'Périphérique', 'entree': 'Périphérique d’entrée', 'sortie': 'Périphérique de sortie', 'alimentation': 'Câble d’alimentation',
       'video': 'Câble vidéo', 'port': 'Port', 'hypothese': 'Hypothèse', 'inventeur': 'Inventeur, inventrice', 'carte-mere': 'Carte mère',
-      'pile': 'Pile de la carte mère', 'disque': 'Disque dur', 'ssd': 'SSD', 'memoire': 'Mémoire vive', 'cle-usb': 'Clé USB'
+      'pile': 'Pile de la carte mère', 'disque': 'Disque dur', 'ssd': 'SSD', 'memoire': 'Mémoire vive', 'cle-usb': 'Clé USB',
+      'processeur': 'Processeur', 'ventilateur': 'Ventilateur', 'bloc-alim': 'Bloc d’alimentation', 'panne': 'Panne', 'experience': 'Expérience',
+      'ressource': 'Ressource', 'mine': 'Mine', 'co2': 'Gaz à effet de serre', 'cycle-de-vie': 'Cycle de vie'
     };
     var keys = Object.keys(names).sort(function (a, b) { return names[a].localeCompare(names[b], 'fr'); });
     box.innerHTML = keys.map(function (k) {
@@ -289,6 +352,7 @@
     buildLexique();
     initPhotos();
     initFields();
+    initDraw();
     initWords();
     setMode(load('mode') || 'eleve');
     $$('.mode button').forEach(function (b) { b.addEventListener('click', function () { setMode(b.getAttribute('data-mode')); }); });

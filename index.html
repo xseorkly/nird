@@ -120,7 +120,7 @@
   <div class="s-head"><div class="wrap">
     <p class="eyebrow">La séquence</p>
     <h1>14 séances, de novembre à juin</h1>
-    <p>Chaque séance dure environ une heure. Les séances 1 à 3 sont prêtes ; les suivantes arrivent bientôt.</p>
+    <p>Chaque séance dure environ une heure. Les séances 1 à 6 sont prêtes ; les suivantes arrivent bientôt.</p>
     <div class="s-meta"><span>CM1-CM2</span><span>≈ 1 h par séance</span><span>5 phases</span></div>
   </div></div>
   <div class="wrap">
@@ -134,13 +134,13 @@
     <div class="phase-title"><span>Phase 2</span><h2 style="margin:0">Comprendre l’ordinateur</h2></div>
     <div class="grid g2">
       <a class="card seance" href="#seance-3"><div class="num">3</div><div><h3>Brancher et démarrer</h3><p>Le défi : faire démarrer un ordinateur livré en pièces détachées.</p><span class="tag ok">Prête</span></div></a>
-      <div class="card seance soon"><div class="num">4</div><div><h3>Dans les entrailles de l’ordinateur</h3><p>On ouvre l’unité centrale et on nomme ses pièces.</p><span class="tag">Bientôt</span></div></div>
-      <div class="card seance soon"><div class="num">5</div><div><h3>Réparer une panne</h3><p>Une enquête : le message « batterie faible » et la pile.</p><span class="tag">Bientôt</span></div></div>
+      <a class="card seance" href="#seance-4"><div class="num">4</div><div><h3>Dans les entrailles de l’ordinateur</h3><p>On ouvre l’unité centrale et on nomme ses pièces.</p><span class="tag ok">Prête</span></div></a>
+      <a class="card seance" href="#seance-5"><div class="num">5</div><div><h3>Réparer une panne</h3><p>Une enquête : le message « batterie faible » et la pile.</p><span class="tag ok">Prête</span></div></a>
     </div>
 
     <div class="phase-title"><span>Phase 3</span><h2 style="margin:0">Comprendre les enjeux</h2></div>
     <div class="grid g2">
-      <div class="card seance soon"><div class="num">6</div><div><h3>Ce que coûte un ordinateur à la planète</h3><p>Mesurer l’impact du numérique avec des données fiables.</p><span class="tag">Bientôt</span></div></div>
+      <a class="card seance" href="#seance-6"><div class="num">6</div><div><h3>Ce que coûte un ordinateur à la planète</h3><p>Mesurer l’impact du numérique avec des données fiables.</p><span class="tag ok">Prête</span></div></a>
       <div class="card seance soon"><div class="num">7</div><div><h3>Réparer ou racheter ?</h3><p>Débattre, et protéger les données avant de donner.</p><span class="tag">Bientôt</span></div></div>
     </div>
 
@@ -595,8 +595,8 @@
           <select data-k="s3-i2" data-answer="ecran"><option value="">…</option><option value="uc">l’unité centrale</option><option value="ecran">l’écran</option></select>.</p>
         <button class="btn small ghost no-print" data-check-btn>Vérifier</button>
         <div class="feedback"></div>
-        <p style="margin-top:18px"><b>Je dessine notre montage</b> (après l’impression, avec des flèches) :</p>
-        <div class="drawbox">Zone de dessin</div>
+        <p style="margin-top:18px"><b>Je dessine notre montage :</b> dessine l’unité centrale et les périphériques, puis relie-les par des flèches.</p>
+        <div class="draw" data-k="s3-dessin"></div>
       </div>
 
       <div class="retiens" data-check>
@@ -622,7 +622,532 @@
       </div>
     </div>
 
-    <div class="s-nav no-print"><a class="btn ghost" href="#seance-2">← Séance 2</a><a class="btn primary" href="#sequence">La séquence →</a></div>
+    <div class="s-nav no-print"><a class="btn ghost" href="#seance-2">← Séance 2</a><a class="btn primary" href="#seance-4">Séance 4 →</a></div>
+  </div>
+</div>
+
+<!-- ======================= SÉANCE 4 ======================= -->
+<div class="view" id="seance-4">
+  <div class="s-head"><div class="wrap">
+    <p class="eyebrow">Phase 2 · Séance 4</p>
+    <h1>Dans les entrailles de l’ordinateur</h1>
+    <p>Aujourd’hui, j’ouvre une unité centrale, je découvre ses pièces et je comprends à quoi elles servent.</p>
+    <div class="s-meta"><span>⏱ 1 h</span><span>Par groupes de 3 ou 4</span><span class="only-prof">Fiche élève + guide</span></div>
+  </div></div>
+  <div class="toolbar no-print"><div class="wrap">
+    <button class="btn small primary" data-print>🖨 Imprimer</button>
+    <button class="btn small ghost" data-clear>Effacer ma fiche</button>
+    <span class="progress-txt only-eleve" style="font-weight:700"></span>
+    <span class="info"></span>
+  </div></div>
+  <div class="wrap">
+
+    <div class="guide only-prof">
+      <h2>Séance 4</h2>
+      <div class="grid g2">
+        <div>
+          <h3>Objectifs</h3>
+          <ul><li>Identifier les principales pièces d’un ordinateur et leur fonction.</li><li>Associer une solution technique à une fonction (ce que fait chaque pièce).</li><li>Représenter l’objet par un croquis légendé et l’expliquer à l’oral.</li><li>Appliquer des règles de sécurité électrique.</li></ul>
+          <h3>Matériel par groupe</h3>
+          <ul><li>Une unité centrale débranchée depuis au moins 5 minutes.</li><li>Un tournevis cruciforme.</li><li>La fiche élève (les photos aident les groupes à reconnaître les pièces).</li></ul>
+        </div>
+        <div>
+          <h3>Déroulé</h3>
+          <ol class="timeline">
+            <li><b>Je prédis</b><span class="min">10 min</span><br>Activité 1 : chacun dessine ce qu’il imagine dans la boîte.</li>
+            <li><b>Les règles de sécurité, puis on ouvre</b><span class="min">15 min</span><br>L’adulte montre comment ouvrir le boîtier ; les groupes observent sans rien démonter.</li>
+            <li><b>Je retrouve les pièces</b><span class="min">10 min</span><br>Activité 2, avec les photos.</li>
+            <li><b>À quoi ça sert ?</b><span class="min">10 min</span><br>Activité 3, puis mise en commun avec les comparaisons au corps humain.</li>
+            <li><b>Croquis et explication</b><span class="min">10 min</span><br>Activités 4 et 5.</li>
+            <li><b>Je retiens</b><span class="min">5 min</span></li>
+          </ol>
+        </div>
+      </div>
+      <div class="note" style="margin-top:16px">
+        <b>Sécurité :</b> câble d’alimentation retiré ; toucher le métal du boîtier avant de mettre les mains dedans (pour évacuer l’électricité statique) ; ne jamais ouvrir le <span class="mot" data-mot="bloc-alim">bloc d’alimentation</span>, qui garde de l’électricité même débranché ; on observe, on ne démonte pas.
+        <br><br><b>Corrigé et comparaisons utiles :</b> carte mère → relie toutes les pièces (le squelette et les nerfs) ; processeur → fait les calculs (le cerveau) ; mémoire vive → retient ce qu’on fait en ce moment (ce qu’on a « en tête ») ; disque dur → garde les fichiers même éteint (le cahier, la bibliothèque) ; bloc d’alimentation → donne l’électricité aux pièces (l’énergie des repas) ; ventilateur → refroidit (comme la transpiration).
+      </div>
+      <h3 style="margin-top:24px">Liens avec les programmes</h3>
+      <div class="links-prog">
+        <div><b>Sciences et technologie :</b> identifier les fonctions des composants ; associer des solutions technologiques à des fonctions ; identifier les sous-ensembles ; représenter un objet par un croquis légendé et l’expliquer (CM1) ; rechercher et appliquer les règles de sécurité électrique.</div>
+        <div><b>EDD :</b> domaine 3, découvrir les matériaux et les métaux cachés dans un ordinateur.</div>
+        <div><b>EMC :</b> prendre soin d’un matériel commun, respecter les consignes.</div>
+        <div><b>Numérique :</b> comprendre de quoi est fait un ordinateur.</div>
+        <div><b>Compétences transversales :</b> observer, schématiser, expliquer à l’oral avec un vocabulaire précis.</div>
+      </div>
+      <h3 style="margin-top:24px">Différenciation</h3>
+      <ul><li>Pour l’activité 2, laisser les élèves comparer avec la machine ouverte devant eux.</li><li>Pour le croquis, accepter un dessin simple de « boîtes » reliées entre elles.</li><li>Les mots soulignés en pointillés affichent leur définition au clic.</li></ul>
+    </div>
+
+    <div class="fiche">
+      <div class="ident">
+        <div><label>Prénom</label><input data-id="prenom" data-k="id-prenom"></div>
+        <div><label>Classe</label><input data-id="classe" data-k="id-classe"></div>
+        <div><label>Groupe</label><input data-id="groupe" data-k="id-groupe"></div>
+        <div><label>Date</label><input data-k="s4-date"></div>
+      </div>
+
+      <div class="grid g2" style="align-items:center">
+        <figure class="photo"><img data-file="ATX_computer_case.jpg" data-w="900" alt="L’intérieur d’une unité centrale"><figcaption>L’intérieur d’une unité centrale</figcaption></figure>
+        <div>
+          <h2>La situation</h2>
+          <p>À la séance 3, nous avons réussi à faire démarrer l’ordinateur. Mais que se passe-t-il à l’intérieur de la boîte ?</p>
+          <p class="consigne">Aujourd’hui, on ouvre l’<span class="mot" data-mot="unite-centrale">unité centrale</span> pour découvrir ses pièces.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:24px">Les règles de sécurité</h3>
+      <div class="safety">
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0V8zM12 17v4"/></svg></span>Je débranche avant d’ouvrir.</div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V5a1.5 1.5 0 0 1 3 0v6M11 10V4a1.5 1.5 0 0 1 3 0v6M14 10V5a1.5 1.5 0 0 1 3 0v8c0 4-2.5 7-6 7s-5-2-6.5-4.5L3 12a1.5 1.5 0 0 1 2.5-1.6L8 13"/></svg></span>Je touche d’abord le métal du boîtier.</div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2L12 3z"/><path d="M12 10v5M12 18v.5"/></svg></span>Je n’ouvre jamais le bloc d’alimentation.</div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>J’observe, je ne démonte pas.</div>
+      </div>
+
+      <h3 style="margin-top:24px">Les mots du jour <a class="allwords no-print" href="#lexique">· voir tous les mots</a></h3>
+      <div class="mots">
+        <div class="mot-card" data-ill="photo:Computer_Motherboard_Closeup.jpg"><b>Carte mère</b>La grande plaque sur laquelle toutes les pièces sont branchées.</div>
+        <div class="mot-card" data-ill="photo:AMD_Ryzen_5_1600_processor_with_Wraith_Spire_cooler_-_detail_view_of_processor.jpg"><b>Processeur</b>La pièce qui fait les calculs : le « cerveau » de l’ordinateur.</div>
+        <div class="mot-card" data-ill="photo:Computer_from_inside_018.jpg"><b>Mémoire vive</b>La mémoire de travail. Elle s’efface quand on éteint.</div>
+        <div class="mot-card" data-ill="photo:Laptop-hard-drive-exposed.jpg"><b>Disque dur</b>Il garde les fichiers, même quand l’ordinateur est éteint.</div>
+        <div class="mot-card" data-ill="photo:ATX_Computer_power_supply_unit.jpg"><b>Bloc d’alimentation</b>Il transforme l’électricité de la prise pour toutes les pièces.</div>
+        <div class="mot-card" data-ill="photo:CPU_fan_and_heatsink.jpg"><b>Ventilateur</b>Il souffle de l’air pour refroidir les pièces qui chauffent.</div>
+      </div>
+
+      <div class="act">
+        <h3 data-ico="bulb"><span class="n">1</span>Je prédis<span class="time">10 min</span></h3>
+        <p class="consigne">Avant d’ouvrir : dessine ce que tu imagines à l’intérieur de l’unité centrale.</p>
+        <div class="draw" data-k="s4-d1"></div>
+        <p style="margin-top:12px"><b>J’imagine qu’il y a :</b></p>
+        <div class="write short" data-k="s4-a1"></div>
+      </div>
+
+      <div class="act" data-check>
+        <h3 data-ico="eye"><span class="n">2</span>J’observe et je retrouve les pièces<span class="time">10 min</span></h3>
+        <p class="consigne">Retrouve chaque pièce dans l’ordinateur ouvert, puis choisis son nom.</p>
+        <div class="grid g3">
+          <div class="piece"><figure class="photo contain"><img data-file="Computer_Motherboard_Closeup.jpg" data-w="500" alt="Pièce A"><figcaption>Pièce A</figcaption></figure>
+            <select data-k="s4-p1" data-answer="carte"><option value="">— son nom —</option><option value="carte">Carte mère</option><option value="proc">Processeur</option><option value="ram">Mémoire vive</option><option value="disque">Disque dur</option><option value="alim">Bloc d’alimentation</option><option value="ventil">Ventilateur</option></select></div>
+          <div class="piece"><figure class="photo contain"><img data-file="CPU_fan_and_heatsink.jpg" data-w="500" alt="Pièce B"><figcaption>Pièce B</figcaption></figure>
+            <select data-k="s4-p2" data-answer="ventil"><option value="">— son nom —</option><option value="carte">Carte mère</option><option value="proc">Processeur</option><option value="ram">Mémoire vive</option><option value="disque">Disque dur</option><option value="alim">Bloc d’alimentation</option><option value="ventil">Ventilateur</option></select></div>
+          <div class="piece"><figure class="photo contain"><img data-file="Laptop-hard-drive-exposed.jpg" data-w="500" alt="Pièce C"><figcaption>Pièce C</figcaption></figure>
+            <select data-k="s4-p3" data-answer="disque"><option value="">— son nom —</option><option value="carte">Carte mère</option><option value="proc">Processeur</option><option value="ram">Mémoire vive</option><option value="disque">Disque dur</option><option value="alim">Bloc d’alimentation</option><option value="ventil">Ventilateur</option></select></div>
+          <div class="piece"><figure class="photo contain"><img data-file="ATX_Computer_power_supply_unit.jpg" data-w="500" alt="Pièce D"><figcaption>Pièce D</figcaption></figure>
+            <select data-k="s4-p4" data-answer="alim"><option value="">— son nom —</option><option value="carte">Carte mère</option><option value="proc">Processeur</option><option value="ram">Mémoire vive</option><option value="disque">Disque dur</option><option value="alim">Bloc d’alimentation</option><option value="ventil">Ventilateur</option></select></div>
+          <div class="piece"><figure class="photo contain"><img data-file="Computer_from_inside_018.jpg" data-w="500" alt="Pièce E"><figcaption>Pièce E</figcaption></figure>
+            <select data-k="s4-p5" data-answer="ram"><option value="">— son nom —</option><option value="carte">Carte mère</option><option value="proc">Processeur</option><option value="ram">Mémoire vive</option><option value="disque">Disque dur</option><option value="alim">Bloc d’alimentation</option><option value="ventil">Ventilateur</option></select></div>
+          <div class="piece"><figure class="photo contain"><img data-file="AMD_Ryzen_5_1600_processor_with_Wraith_Spire_cooler_-_detail_view_of_processor.jpg" data-w="500" alt="Pièce F"><figcaption>Pièce F</figcaption></figure>
+            <select data-k="s4-p6" data-answer="proc"><option value="">— son nom —</option><option value="carte">Carte mère</option><option value="proc">Processeur</option><option value="ram">Mémoire vive</option><option value="disque">Disque dur</option><option value="alim">Bloc d’alimentation</option><option value="ventil">Ventilateur</option></select></div>
+        </div>
+        <button class="btn small ghost no-print" style="margin-top:14px" data-check-btn>Vérifier mes réponses</button>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="act" data-check>
+        <h3 data-ico="question"><span class="n">3</span>À quoi ça sert ?<span class="time">10 min</span></h3>
+        <p class="consigne">Pour chaque pièce, choisis ce qu’elle fait.</p>
+        <table class="t">
+          <tr><th style="width:30%">Pièce</th><th>Ce qu’elle fait</th></tr>
+          <tr><td><b>Carte mère</b></td><td><select data-k="s4-f1" data-answer="relie"><option value="">— choisir —</option><option value="relie">Elle relie toutes les pièces entre elles</option><option value="calcule">Elle fait les calculs</option><option value="travail">Elle retient ce qu’on fait en ce moment</option><option value="garde">Elle garde les fichiers, même éteint</option><option value="elec">Elle donne l’électricité aux pièces</option><option value="froid">Elle refroidit les pièces</option></select></td></tr>
+          <tr><td><b>Processeur</b></td><td><select data-k="s4-f2" data-answer="calcule"><option value="">— choisir —</option><option value="relie">Il relie toutes les pièces entre elles</option><option value="calcule">Il fait les calculs</option><option value="travail">Il retient ce qu’on fait en ce moment</option><option value="garde">Il garde les fichiers, même éteint</option><option value="elec">Il donne l’électricité aux pièces</option><option value="froid">Il refroidit les pièces</option></select></td></tr>
+          <tr><td><b>Mémoire vive</b></td><td><select data-k="s4-f3" data-answer="travail"><option value="">— choisir —</option><option value="relie">Elle relie toutes les pièces entre elles</option><option value="calcule">Elle fait les calculs</option><option value="travail">Elle retient ce qu’on fait en ce moment</option><option value="garde">Elle garde les fichiers, même éteint</option><option value="elec">Elle donne l’électricité aux pièces</option><option value="froid">Elle refroidit les pièces</option></select></td></tr>
+          <tr><td><b>Disque dur</b></td><td><select data-k="s4-f4" data-answer="garde"><option value="">— choisir —</option><option value="relie">Il relie toutes les pièces entre elles</option><option value="calcule">Il fait les calculs</option><option value="travail">Il retient ce qu’on fait en ce moment</option><option value="garde">Il garde les fichiers, même éteint</option><option value="elec">Il donne l’électricité aux pièces</option><option value="froid">Il refroidit les pièces</option></select></td></tr>
+          <tr><td><b>Bloc d’alimentation</b></td><td><select data-k="s4-f5" data-answer="elec"><option value="">— choisir —</option><option value="relie">Il relie toutes les pièces entre elles</option><option value="calcule">Il fait les calculs</option><option value="travail">Il retient ce qu’on fait en ce moment</option><option value="garde">Il garde les fichiers, même éteint</option><option value="elec">Il donne l’électricité aux pièces</option><option value="froid">Il refroidit les pièces</option></select></td></tr>
+          <tr><td><b>Ventilateur</b></td><td><select data-k="s4-f6" data-answer="froid"><option value="">— choisir —</option><option value="relie">Il relie toutes les pièces entre elles</option><option value="calcule">Il fait les calculs</option><option value="travail">Il retient ce qu’on fait en ce moment</option><option value="garde">Il garde les fichiers, même éteint</option><option value="elec">Il donne l’électricité aux pièces</option><option value="froid">Il refroidit les pièces</option></select></td></tr>
+        </table>
+        <button class="btn small ghost no-print" data-check-btn>Vérifier mes réponses</button>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="act">
+        <h3 data-ico="pencil"><span class="n">4</span>Mon croquis légendé<span class="time">10 min</span></h3>
+        <p class="consigne">Dessine l’intérieur de l’unité centrale tel que tu l’as vu. Trace des flèches et écris le nom d’au moins 4 pièces.</p>
+        <div class="draw" data-k="s4-d2"></div>
+        <p style="margin-top:12px"><b>Les pièces que j’ai légendées :</b></p>
+        <div class="write short" data-k="s4-a4"></div>
+      </div>
+
+      <div class="act">
+        <h3 data-ico="chat"><span class="n">5</span>J’explique à un camarade<span class="time">5 min</span></h3>
+        <p class="consigne">Explique ton croquis à un camarade d’un autre groupe. Écris une chose qu’il a apprise grâce à toi.</p>
+        <div class="write short" data-k="s4-a5"></div>
+      </div>
+
+      <div class="retiens" data-check>
+        <h3 data-ico="bookmark">Je retiens</h3>
+        <p>Dans l’unité centrale, la <b>carte mère</b> relie toutes les pièces. Le <b>processeur</b> fait les
+          <input class="blank" data-k="s4-t1" data-answer="calculs|calcul" placeholder="………">.
+          Le <b>disque dur</b> garde les
+          <input class="blank" data-k="s4-t2" data-answer="fichiers|fichier|données|donnees" placeholder="………">
+          même quand l’ordinateur est éteint. Avant d’ouvrir un ordinateur, je le
+          <input class="blank" data-k="s4-t3" data-answer="débranche|debranche" placeholder="………">.</p>
+        <button class="btn small ghost no-print" data-check-btn>Vérifier mes réponses</button>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="act">
+        <h3 data-ico="star">Mon bilan</h3>
+        <p>Je sais nommer les pièces d’un ordinateur et dire à quoi elles servent :</p>
+        <div class="radios">
+          <label><input type="radio" name="s4-b" value="oui" data-k="s4-b"> Oui</label>
+          <label><input type="radio" name="s4-b" value="un peu" data-k="s4-b"> Un peu</label>
+          <label><input type="radio" name="s4-b" value="pas encore" data-k="s4-b"> Pas encore</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="s-nav no-print"><a class="btn ghost" href="#seance-3">← Séance 3</a><a class="btn primary" href="#seance-5">Séance 5 →</a></div>
+  </div>
+</div>
+
+<!-- ======================= SÉANCE 5 ======================= -->
+<div class="view" id="seance-5">
+  <div class="s-head"><div class="wrap">
+    <p class="eyebrow">Phase 2 · Séance 5</p>
+    <h1>Réparer une panne : la pile de la carte mère</h1>
+    <p>Aujourd’hui, je mène une enquête pour réparer une vraie panne, comme un scientifique.</p>
+    <div class="s-meta"><span>⏱ 1 h</span><span>En classe entière, puis en groupes</span><span class="only-prof">Fiche élève + guide</span></div>
+  </div></div>
+  <div class="toolbar no-print"><div class="wrap">
+    <button class="btn small primary" data-print>🖨 Imprimer</button>
+    <button class="btn small ghost" data-clear>Effacer ma fiche</button>
+    <span class="progress-txt only-eleve" style="font-weight:700"></span>
+    <span class="info"></span>
+  </div></div>
+  <div class="wrap">
+
+    <div class="guide only-prof">
+      <h2>Séance 5</h2>
+      <div class="grid g2">
+        <div>
+          <h3>Objectifs</h3>
+          <ul><li>Mener une démarche d’investigation complète : observer, faire une hypothèse, la tester, conclure.</li><li>Écrire un plan d’action et le suivre.</li><li>Réaliser un premier geste technique : remplacer la pile de la carte mère.</li></ul>
+          <h3>Matériel</h3>
+          <ul><li>Un ordinateur qui affiche l’erreur de pile au démarrage. Astuce : retirer la pile quelques minutes la veille fait perdre l’heure et les réglages.</li><li>Une pile neuve CR2032, un tournevis.</li><li>Vidéoprojecteur et tablette ou caméra pour filmer le geste ; OpenBoard et Lama Tools (déjà dans PrimTux) pour écrire le plan et tirer un élève au sort.</li><li>Une boîte de collecte pour les piles usagées.</li></ul>
+        </div>
+        <div>
+          <h3>Déroulé</h3>
+          <ol class="timeline">
+            <li><b>Le problème</b><span class="min">10 min</span><br>On démarre l’ordinateur devant la classe. Activité 1.</li>
+            <li><b>Nos hypothèses</b><span class="min">10 min</span><br>Activité 2, en groupes, puis mise en commun.</li>
+            <li><b>Le plan d’action</b><span class="min">15 min</span><br>Activité 3 : remettre les étapes dans l’ordre, puis les écrire ensemble au tableau.</li>
+            <li><b>L’expérience</b><span class="min">10 min</span><br>Un élève tiré au sort remplace la pile, filmé et projeté pour toute la classe.</li>
+            <li><b>Observation et conclusion</b><span class="min">10 min</span><br>Activités 4 et 5.</li>
+            <li><b>Je retiens</b><span class="min">5 min</span></li>
+          </ol>
+        </div>
+      </div>
+      <div class="note" style="margin-top:16px">
+        <b>⚠ Sécurité des piles bouton :</b> une pile bouton avalée est très dangereuse. L’adulte distribue et récupère les piles ; aucune pile ne reste sur les tables ni dans les poches.
+        <br><br><b>Corrigé de l’activité 3 :</b> 1 éteindre et débrancher ; 2 toucher le métal du boîtier ; 3 ouvrir le boîtier ; 4 repérer la pile sur la carte mère ; 5 retirer l’ancienne pile et mettre la nouvelle, le « + » vers le haut ; 6 refermer, rebrancher et redémarrer ; 7 régler la date et l’heure.
+        <br><br><b>À l’observation :</b> au premier redémarrage, un message peut signaler que les réglages ont été perdus. C’est normal : la pile a été retirée. Après avoir réglé la date et l’heure, le message disparaît et l’heure reste juste.
+      </div>
+      <h3 style="margin-top:24px">Liens avec les programmes</h3>
+      <div class="links-prog">
+        <div><b>Sciences et technologie :</b> imaginer une solution à un problème donné et vérifier qu’elle répond au problème (CM2) ; associer une solution technique à une fonction (CM1) ; pratiquer une démarche scientifique.</div>
+        <div><b>EDD :</b> domaine 2, réparer plutôt que jeter ; les piles usagées sont des déchets à collecter.</div>
+        <div><b>EMC :</b> prendre des responsabilités devant le groupe.</div>
+        <div><b>Numérique :</b> résoudre un problème technique.</div>
+        <div><b>Compétences transversales :</b> formuler une hypothèse, écrire et suivre un plan d’action, observer et conclure.</div>
+      </div>
+    </div>
+
+    <div class="fiche">
+      <div class="ident">
+        <div><label>Prénom</label><input data-id="prenom" data-k="id-prenom"></div>
+        <div><label>Classe</label><input data-id="classe" data-k="id-classe"></div>
+        <div><label>Groupe</label><input data-id="groupe" data-k="id-groupe"></div>
+        <div><label>Date</label><input data-k="s5-date"></div>
+      </div>
+
+      <div class="grid g2" style="align-items:center">
+        <figure class="photo"><img data-file="Lifetec_LT9303_-_Motherboard_-_Toshiba_CR2032-1130.jpg" data-w="900" alt="Une pile ronde posée sur une carte mère"><figcaption>Une pile ronde sur une carte mère</figcaption></figure>
+        <div>
+          <h2>Le mystère</h2>
+          <p>Au démarrage, un ordinateur affiche un message en anglais avec le mot <b>« battery »</b> (pile, batterie). Et chaque fois qu’on le rallume, <b>la date et l’heure ne sont plus bonnes</b> !</p>
+          <p class="consigne">Mène l’enquête : d’où vient cette <span class="mot" data-mot="panne">panne</span>, et comment la réparer ?</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:24px">Les mots du jour <a class="allwords no-print" href="#lexique">· voir tous les mots</a></h3>
+      <div class="mots">
+        <div class="mot-card" data-ill="icon:warn"><b>Panne</b>Quand un appareil ne fonctionne plus normalement.</div>
+        <div class="mot-card" data-ill="photo:CR2032_battery,_Mitsubishi,_computer_backup_battery-2423.jpg"><b>Pile de la carte mère</b>Une pile ronde et plate qui garde l’heure et les réglages quand l’ordinateur est éteint.</div>
+        <div class="mot-card" data-ill="icon:bulb"><b>Hypothèse</b>Une idée qu’on propose pour expliquer quelque chose, et qu’on va vérifier.</div>
+        <div class="mot-card" data-ill="icon:eye"><b>Expérience</b>Un test que l’on fait pour vérifier si l’hypothèse est juste.</div>
+      </div>
+
+      <div class="act">
+        <h3 data-ico="eye"><span class="n">1</span>J’observe le problème<span class="time">5 min</span></h3>
+        <p><b>Ce que je vois à l’écran :</b></p>
+        <div class="write short" data-k="s5-a1"></div>
+        <p style="margin-top:12px"><b>Ce qui ne va pas :</b></p>
+        <div class="write short" data-k="s5-a2"></div>
+      </div>
+
+      <div class="act">
+        <h3 data-ico="bulb"><span class="n">2</span>Nos hypothèses<span class="time">10 min</span></h3>
+        <table class="t">
+          <tr><th style="width:50%">Nous pensons que la panne vient de…</th><th>… parce que…</th></tr>
+          <tr><td><div class="write" data-k="s5-h1"></div></td><td><div class="write" data-k="s5-p1"></div></td></tr>
+          <tr><td><div class="write" data-k="s5-h2"></div></td><td><div class="write" data-k="s5-p2"></div></td></tr>
+        </table>
+        <p style="margin-top:12px"><b>L’hypothèse que la classe va tester :</b></p>
+        <div class="write short" data-k="s5-h3"></div>
+      </div>
+
+      <div class="act" data-check>
+        <h3 data-ico="check"><span class="n">3</span>Le plan d’action<span class="time">15 min</span></h3>
+        <p class="consigne">Les étapes sont mélangées. Donne à chacune son numéro, de 1 à 7.</p>
+        <div class="order-row"><select data-k="s5-o1" data-answer="5"><option value="">n°</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select><span>Retirer l’ancienne pile et mettre la nouvelle, le « + » vers le haut.</span></div>
+        <div class="order-row"><select data-k="s5-o2" data-answer="1"><option value="">n°</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select><span>Éteindre l’ordinateur et le débrancher.</span></div>
+        <div class="order-row"><select data-k="s5-o3" data-answer="7"><option value="">n°</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select><span>Régler la date et l’heure.</span></div>
+        <div class="order-row"><select data-k="s5-o4" data-answer="3"><option value="">n°</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select><span>Ouvrir le boîtier.</span></div>
+        <div class="order-row"><select data-k="s5-o5" data-answer="6"><option value="">n°</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select><span>Refermer, rebrancher et redémarrer.</span></div>
+        <div class="order-row"><select data-k="s5-o6" data-answer="2"><option value="">n°</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select><span>Toucher le métal du boîtier.</span></div>
+        <div class="order-row"><select data-k="s5-o7" data-answer="4"><option value="">n°</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select><span>Repérer la pile sur la carte mère.</span></div>
+        <button class="btn small ghost no-print" style="margin-top:14px" data-check-btn>Vérifier l’ordre</button>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="act">
+        <h3 data-ico="eye"><span class="n">4</span>L’expérience et l’observation<span class="time">10 min</span></h3>
+        <p><b>Après le changement de pile, qu’observe-t-on ?</b></p>
+        <div class="write" data-k="s5-a4"></div>
+        <p style="margin-top:12px">Notre hypothèse était-elle juste ?</p>
+        <div class="radios">
+          <label><input type="radio" name="s5-v" value="oui" data-k="s5-v"> Oui</label>
+          <label><input type="radio" name="s5-v" value="non" data-k="s5-v"> Non</label>
+        </div>
+        <p style="margin-top:12px"><b>Notre conclusion :</b></p>
+        <div class="write short" data-k="s5-a5"></div>
+      </div>
+
+      <div class="act" data-check>
+        <h3 data-ico="battery"><span class="n">5</span>Et l’ancienne pile ?<span class="time">5 min</span></h3>
+        <p class="consigne">Où faut-il mettre la pile usagée ?</p>
+        <div class="sort-row stack" data-answer="collecte"><span>Je choisis :</span>
+          <div class="radios">
+            <label><input type="radio" name="s5-r" value="poubelle" data-k="s5-r"> Dans la poubelle de la classe</label>
+            <label><input type="radio" name="s5-r" value="collecte" data-k="s5-r"> Dans une boîte de collecte des piles</label>
+            <label><input type="radio" name="s5-r" value="garder" data-k="s5-r"> Dans ma trousse</label>
+          </div>
+        </div>
+        <button class="btn small ghost no-print" style="margin-top:14px" data-check-btn>Vérifier</button>
+        <div class="feedback"></div>
+        <p style="margin-top:12px"><b>Pourquoi ?</b></p>
+        <div class="write short" data-k="s5-a6"></div>
+      </div>
+
+      <div class="retiens" data-check>
+        <h3 data-ico="bookmark">Je retiens</h3>
+        <p>Pour résoudre un problème comme un scientifique, j’observe, je fais une
+          <input class="blank" data-k="s5-t1" data-answer="hypothèse|hypothese" placeholder="………">,
+          je la teste avec une
+          <input class="blank" data-k="s5-t2" data-answer="expérience|experience" placeholder="………">,
+          puis je conclus. La pile de la carte mère permet à l’ordinateur de garder l’
+          <input class="blank" data-k="s5-t3" data-answer="heure" placeholder="………">
+          quand il est éteint.</p>
+        <button class="btn small ghost no-print" data-check-btn>Vérifier mes réponses</button>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="act">
+        <h3 data-ico="star">Mon bilan</h3>
+        <p>Je sais expliquer les étapes de notre enquête :</p>
+        <div class="radios">
+          <label><input type="radio" name="s5-b" value="oui" data-k="s5-b"> Oui</label>
+          <label><input type="radio" name="s5-b" value="un peu" data-k="s5-b"> Un peu</label>
+          <label><input type="radio" name="s5-b" value="pas encore" data-k="s5-b"> Pas encore</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="s-nav no-print"><a class="btn ghost" href="#seance-4">← Séance 4</a><a class="btn primary" href="#seance-6">Séance 6 →</a></div>
+  </div>
+</div>
+
+<!-- ======================= SÉANCE 6 ======================= -->
+<div class="view" id="seance-6">
+  <div class="s-head"><div class="wrap">
+    <p class="eyebrow">Phase 3 · Séance 6</p>
+    <h1>Ce que coûte un ordinateur à la planète</h1>
+    <p>Aujourd’hui, je découvre d’où vient un ordinateur et à quel moment il pollue le plus, avec des chiffres fiables.</p>
+    <div class="s-meta"><span>⏱ 1 h</span><span>Seul et en binômes</span><span class="only-prof">Fiche élève + guide</span></div>
+  </div></div>
+  <div class="toolbar no-print"><div class="wrap">
+    <button class="btn small primary" data-print>🖨 Imprimer</button>
+    <button class="btn small ghost" data-clear>Effacer ma fiche</button>
+    <span class="progress-txt only-eleve" style="font-weight:700"></span>
+    <span class="info"></span>
+  </div></div>
+  <div class="wrap">
+
+    <div class="guide only-prof">
+      <h2>Séance 6</h2>
+      <div class="grid g2">
+        <div>
+          <h3>Objectifs</h3>
+          <ul><li>Comprendre le cycle de vie d’un ordinateur : extraction, fabrication, utilisation, fin de vie.</li><li>Découvrir, chiffres à l’appui, que la fabrication pèse le plus lourd.</li><li>Chercher une information dans un outil fiable et lire un graphique.</li><li>En tirer le geste le plus utile : garder et réparer son matériel.</li></ul>
+          <h3>Matériel</h3>
+          <ul><li>L’outil en ligne <a href="https://impactco2.fr/outils/numerique">Impact CO2 – numérique</a> de l’ADEME, au tableau ou sur tablettes.</li><li>La fiche élève.</li></ul>
+        </div>
+        <div>
+          <h3>Déroulé</h3>
+          <ol class="timeline">
+            <li><b>Je prédis</b><span class="min">5 min</span><br>Activité 1 : chacun vote et justifie.</li>
+            <li><b>La vie d’un ordinateur</b><span class="min">15 min</span><br>Activité 2 : photos, puis remettre les étapes dans l’ordre.</li>
+            <li><b>Je cherche avec un outil fiable</b><span class="min">15 min</span><br>Activité 3, sur l’outil Impact CO2.</li>
+            <li><b>Je lis un graphique</b><span class="min">10 min</span><br>Activité 4.</li>
+            <li><b>Ma conclusion</b><span class="min">10 min</span><br>Activité 5, retour sur la prédiction.</li>
+            <li><b>Je retiens</b><span class="min">5 min</span></li>
+          </ol>
+        </div>
+      </div>
+      <div class="note" style="margin-top:16px">
+        <b>Données de référence</b> (outil Impact CO2, données ADEME, consultées en novembre 2026 ; à vérifier le jour de la séance) : ordinateur portable 193 kg CO₂e, dont 96 % pour la fabrication ; ordinateur fixe sans écran (particulier) 300 kg CO₂e, dont 89 % ; smartphone 80,2 kg CO₂e, dont 99 %. L’outil compare la fabrication et l’usage.
+        <br><br><b>Expliquer « kg CO₂e » simplement :</b> c’est la quantité de gaz qui réchauffent la planète, comptée en kilos. 193 kg, c’est à peu près le poids de trois adultes.
+        <br><br><b>Corrigés :</b> activité 2 : 1 extraire, 2 fabriquer, 3 utiliser, 4 jeter. Activité 4 : « presque tout » ; l’ordinateur fixe. Activité 5 : garder et réparer son ordinateur le plus longtemps possible.
+        <br><br><b>Vigilance :</b> ne culpabiliser personne ; on parle d’objets et de choix collectifs. Les chiffres sont des estimations : c’est l’ordre de grandeur qui compte.
+      </div>
+      <h3 style="margin-top:24px">Pour aller plus loin</h3>
+      <ul>
+        <li><a href="https://librairie.ademe.fr/consommer-autrement/8135-quels-sont-les-impacts-environnementaux-du-numerique-.html">ADEME : quels sont les impacts environnementaux du numérique ?</a></li>
+        <li><a href="https://librairie.ademe.fr/consommer-autrement/7685-des-metaux-precieux-et-strategiques-dans-nos-appareils-numeriques.html">ADEME : des métaux précieux et stratégiques dans nos appareils numériques</a></li>
+        <li><a href="https://www.qqf.fr/infographie/les-metaux-et-minerais-des-ressources-qui-pourraient-manquer/">Infographie : les métaux et minerais, des ressources qui pourraient manquer</a></li>
+        <li><a href="https://mtaterre.fr/articles/le-numerique-responsable-cest-quoi/">MtaTerre : le numérique responsable, c’est quoi ?</a></li>
+      </ul>
+      <h3 style="margin-top:24px">Liens avec les programmes</h3>
+      <div class="links-prog">
+        <div><b>Sciences et technologie :</b> comparer des solutions au regard de la durée de vie et de la transition écologique (CM2) ; la notion de cycle de vie d’un objet technique ; repérer les évolutions d’un objet selon le contexte du développement durable (CM1).</div>
+        <div><b>EDD :</b> domaine 1, s’appuyer sur la science et distinguer les faits des opinions ; domaine 3, comprendre les effets des activités humaines et lire des données sous plusieurs formes.</div>
+        <div><b>EMC :</b> CM2, l’esprit critique : croyance, opinion ou savoir ? Le devoir de protéger l’environnement.</div>
+        <div><b>Numérique :</b> mener une recherche d’information dans un outil fiable.</div>
+        <div><b>Compétences transversales :</b> lire un graphique, comprendre un pourcentage simple, argumenter à partir de données.</div>
+      </div>
+    </div>
+
+    <div class="fiche">
+      <div class="ident">
+        <div><label>Prénom</label><input data-id="prenom" data-k="id-prenom"></div>
+        <div><label>Classe</label><input data-id="classe" data-k="id-classe"></div>
+        <div><label>Groupe</label><input data-id="groupe" data-k="id-groupe"></div>
+        <div><label>Date</label><input data-k="s6-date"></div>
+      </div>
+
+      <h2>La question du jour</h2>
+      <p class="consigne">À quel moment un ordinateur pollue-t-il le plus : quand on le fabrique, quand on l’utilise, ou quand on le jette ?</p>
+
+      <h3>Les mots du jour <a class="allwords no-print" href="#lexique">· voir tous les mots</a></h3>
+      <div class="mots">
+        <div class="mot-card" data-ill="icon:box"><b>Ressource</b>Ce qu’on prend dans la nature pour fabriquer des objets : métaux, eau, pétrole, sable…</div>
+        <div class="mot-card" data-ill="photo:Chino_copper_mine.jpg"><b>Mine</b>Un endroit où l’on creuse la terre pour en extraire des métaux.</div>
+        <div class="mot-card" data-ill="icon:cloud"><b>Gaz à effet de serre</b>Des gaz qui réchauffent la planète. On les compte en kilos (kg CO₂e).</div>
+        <div class="mot-card" data-ill="icon:refresh"><b>Cycle de vie</b>Toutes les étapes de la vie d’un objet : fabrication, utilisation, déchet.</div>
+      </div>
+
+      <div class="act">
+        <h3 data-ico="bulb"><span class="n">1</span>Je prédis<span class="time">5 min</span></h3>
+        <p>À mon avis, un ordinateur pollue le plus :</p>
+        <div class="radios">
+          <label><input type="radio" name="s6-p" value="fab" data-k="s6-p"> quand on le fabrique</label>
+          <label><input type="radio" name="s6-p" value="use" data-k="s6-p"> quand on l’utilise</label>
+          <label><input type="radio" name="s6-p" value="fin" data-k="s6-p"> quand on le jette</label>
+        </div>
+        <p style="margin-top:12px"><b>Parce que :</b></p>
+        <div class="write short" data-k="s6-a1"></div>
+      </div>
+
+      <div class="act" data-check>
+        <h3 data-ico="refresh"><span class="n">2</span>La vie d’un ordinateur<span class="time">15 min</span></h3>
+        <p class="consigne">Observe les photos. Puis donne à chaque étape son numéro, de 1 à 4.</p>
+        <div class="grid g4">
+          <figure class="photo"><img data-file="Chino_copper_mine.jpg" data-w="600" alt="Une immense mine à ciel ouvert"><figcaption>Une mine de cuivre</figcaption></figure>
+          <figure class="photo"><img data-file="Computer_Motherboard_Closeup.jpg" data-w="600" alt="Une carte mère"><figcaption>Des pièces fabriquées en usine</figcaption></figure>
+          <figure class="photo contain"><img data-file="HP_ProDesk_600_G1_Tower_PC-001.jpg" data-w="400" alt="Une unité centrale"><figcaption>Un ordinateur qu’on utilise</figcaption></figure>
+          <figure class="photo"><img data-file="Electronic_waste_at_Agbogbloshie,_Ghana.jpg" data-w="600" alt="Des déchets électroniques entassés"><figcaption>Des déchets électroniques</figcaption></figure>
+        </div>
+        <div style="margin-top:14px">
+          <div class="order-row"><select data-k="s6-o1" data-answer="3"><option value="">n°</option><option>1</option><option>2</option><option>3</option><option>4</option></select><span>On utilise l’ordinateur à l’école ou à la maison.</span></div>
+          <div class="order-row"><select data-k="s6-o2" data-answer="1"><option value="">n°</option><option>1</option><option>2</option><option>3</option><option>4</option></select><span>On extrait des métaux dans des mines.</span></div>
+          <div class="order-row"><select data-k="s6-o3" data-answer="4"><option value="">n°</option><option>1</option><option>2</option><option>3</option><option>4</option></select><span>On le jette : il devient un déchet électronique.</span></div>
+          <div class="order-row"><select data-k="s6-o4" data-answer="2"><option value="">n°</option><option>1</option><option>2</option><option>3</option><option>4</option></select><span>On fabrique les pièces en usine et on assemble l’ordinateur.</span></div>
+        </div>
+        <button class="btn small ghost no-print" style="margin-top:14px" data-check-btn>Vérifier l’ordre</button>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="act">
+        <h3 data-ico="eye"><span class="n">3</span>Je cherche avec un outil fiable<span class="time">15 min</span></h3>
+        <p class="consigne">Ouvre l’outil Impact CO2 de l’ADEME (un organisme public). Pour chaque appareil, note ce qu’il indique.</p>
+        <p class="no-print"><a class="btn small primary" href="https://impactco2.fr/outils/numerique">Ouvrir l’outil Impact CO2</a></p>
+        <table class="t">
+          <tr><th>Appareil</th><th style="width:30%">Total (en kg CO₂e)</th><th style="width:30%">Part de la fabrication (en %)</th></tr>
+          <tr><td><b>Ordinateur portable</b></td><td><div class="write short" data-k="s6-v1"></div></td><td><div class="write short" data-k="s6-w1"></div></td></tr>
+          <tr><td><b>Ordinateur fixe</b></td><td><div class="write short" data-k="s6-v2"></div></td><td><div class="write short" data-k="s6-w2"></div></td></tr>
+          <tr><td><b>Smartphone</b></td><td><div class="write short" data-k="s6-v3"></div></td><td><div class="write short" data-k="s6-w3"></div></td></tr>
+        </table>
+      </div>
+
+      <div class="act" data-check>
+        <h3 data-ico="question"><span class="n">4</span>Je lis un graphique<span class="time">10 min</span></h3>
+        <p>Part de la pollution due à la fabrication et à l’utilisation, pour trois appareils.</p>
+        <div class="legend"><span><i style="background:var(--rust)"></i>Fabrication</span><span><i style="background:var(--amber)"></i>Utilisation</span></div>
+        <div class="bars">
+          <div class="bar-row"><b>Ordinateur portable</b><div class="bar-track"><div class="bar-fab" style="width:96%">96 %</div><div class="bar-use" style="width:4%"></div></div></div>
+          <div class="bar-row"><b>Ordinateur fixe</b><div class="bar-track"><div class="bar-fab" style="width:89%">89 %</div><div class="bar-use" style="width:11%">11 %</div></div></div>
+          <div class="bar-row"><b>Smartphone</b><div class="bar-track"><div class="bar-fab" style="width:99%">99 %</div><div class="bar-use" style="width:1%"></div></div></div>
+        </div>
+        <p style="font-size:.85rem">Source : outil Impact CO2, données ADEME.</p>
+        <p><b>a.</b> Pour l’ordinateur portable, la fabrication représente :
+          <select data-k="s6-g1" data-answer="tout"><option value="">…</option><option value="tout">presque tout</option><option value="moitie">environ la moitié</option><option value="rien">presque rien</option></select></p>
+        <p><b>b.</b> L’appareil dont l’utilisation pèse le plus est :
+          <select data-k="s6-g2" data-answer="fixe"><option value="">…</option><option value="portable">l’ordinateur portable</option><option value="fixe">l’ordinateur fixe</option><option value="smartphone">le smartphone</option></select></p>
+        <button class="btn small ghost no-print" data-check-btn>Vérifier mes réponses</button>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="act" data-check>
+        <h3 data-ico="check"><span class="n">5</span>Ma conclusion<span class="time">10 min</span></h3>
+        <div class="sort-row stack" data-answer="garder"><span>Le geste le plus utile pour la planète, c’est :</span>
+          <div class="radios">
+            <label><input type="radio" name="s6-c" value="neuf" data-k="s6-c"> acheter souvent un ordinateur neuf</label>
+            <label><input type="radio" name="s6-c" value="garder" data-k="s6-c"> garder et réparer son ordinateur le plus longtemps possible</label>
+            <label><input type="radio" name="s6-c" value="ecran" data-k="s6-c"> baisser la luminosité de l’écran</label>
+          </div>
+        </div>
+        <button class="btn small ghost no-print" style="margin-top:14px" data-check-btn>Vérifier</button>
+        <div class="feedback"></div>
+        <p style="margin-top:12px"><b>Ma prédiction de l’activité 1 était-elle juste ? Explique.</b></p>
+        <div class="write short" data-k="s6-a5"></div>
+        <p style="margin-top:12px"><b>Trois gestes que je peux faire :</b></p>
+        <div class="write" data-k="s6-a6"></div>
+      </div>
+
+      <div class="retiens" data-check>
+        <h3 data-ico="bookmark">Je retiens</h3>
+        <p>La plus grande partie de la pollution d’un ordinateur vient de sa
+          <input class="blank" data-k="s6-t1" data-answer="fabrication" placeholder="………">.
+          Pour le fabriquer, on extrait des métaux dans des
+          <input class="blank" data-k="s6-t2" data-answer="mines|mine" placeholder="………">.
+          Le geste le plus utile est donc de le garder et de le
+          <input class="blank" data-k="s6-t3" data-answer="réparer|reparer" placeholder="………">.</p>
+        <button class="btn small ghost no-print" data-check-btn>Vérifier mes réponses</button>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="act">
+        <h3 data-ico="star">Mon bilan</h3>
+        <p>Je sais expliquer pourquoi il vaut mieux garder un ordinateur longtemps :</p>
+        <div class="radios">
+          <label><input type="radio" name="s6-b" value="oui" data-k="s6-b"> Oui</label>
+          <label><input type="radio" name="s6-b" value="un peu" data-k="s6-b"> Un peu</label>
+          <label><input type="radio" name="s6-b" value="pas encore" data-k="s6-b"> Pas encore</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="s-nav no-print"><a class="btn ghost" href="#seance-5">← Séance 5</a><a class="btn primary" href="#sequence">La séquence →</a></div>
   </div>
 </div>
 
@@ -664,13 +1189,20 @@
       <li><a href="https://commons.wikimedia.org/wiki/File:HDMI_Cable.JPG">HDMI Cable</a>, Kannan Shanmugam</li>
       <li><a href="https://commons.wikimedia.org/wiki/File:Male_VGA_connector.jpg">Male VGA connector</a>, Swift.Hg</li>
       <li><a href="https://commons.wikimedia.org/wiki/File:Computer_from_inside_018.jpg">Computer from inside</a>, Kallerna</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:AMD_Ryzen_5_1600_processor_with_Wraith_Spire_cooler_-_detail_view_of_processor.jpg">AMD Ryzen 5 1600 processor</a>, Wikimedia Commons</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:CPU_fan_and_heatsink.jpg">CPU fan and heatsink</a>, ZeroOne</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:ATX_Computer_power_supply_unit.jpg">ATX Computer power supply unit</a>, Dmitry Makeev</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Lifetec_LT9303_-_Motherboard_-_Toshiba_CR2032-1130.jpg">Lifetec LT9303 motherboard, CR2032</a>, Raimond Spekking</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Chino_copper_mine.jpg">Chino copper mine</a>, Eric Guinther</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Electronic_waste_at_Agbogbloshie,_Ghana.jpg">Electronic waste at Agbogbloshie, Ghana</a>, Muntaka Chasant</li>
       <li><a href="https://commons.wikimedia.org/wiki/File:PS2_keyboard_and_mouse_ports.jpg">PS2 keyboard and mouse ports</a>, Daniel Beardsmore (domaine public)</li>
     </ul>
     <h2 style="margin-top:32px">Ressources</h2>
     <ul>
       <li><a href="https://nird.forge.apps.education.fr/index.html">Le site national de la démarche NIRD</a></li>
       <li><a href="https://docs.numerique.gouv.fr/docs/79015c89-73d8-477f-928c-612d00820e0b/">Le carnet de bord de l’école Louis Barrié, Figeac</a></li>
-      <li><a href="https://ada-zangemann.forge.apps.education.fr/">Ada &amp; Zangemann, version numérique libre</a></li>
+      <li><a href="https://ada-zangemann.forge.apps.education.fr/livre/">Ada &amp; Zangemann, à lire en ligne</a></li>
+      <li><a href="https://impactco2.fr/outils/numerique">Impact CO2 – numérique (ADEME)</a></li>
       <li><a href="https://www.education.gouv.fr/sites/default/files/document/annexe-2-programme-de-sciences-et-technologie-du-cycle-3-519023.pdf">Programme de sciences et technologie du cycle 3 (BO du 11 juin 2026)</a></li>
     </ul>
   </div>

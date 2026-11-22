@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Réparer, libérer, partager — Projet NIRD au cycle 3</title>
+<meta name="description" content="Projet NIRD (numérique inclusif, responsable et durable) au cycle 3 : des élèves de CM1-CM2 reconditionnent de vieux ordinateurs sous Linux. Séquence, fiches élèves et guide enseignant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400..700&family=Nunito+Sans:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#accueil"><span class="dot">♻</span><span class="brand-txt">Projet NIRD · Cycle 3</span></a>
+    <nav class="nav">
+      <a href="#accueil">Le projet</a>
+      <a href="#sequence">La séquence</a>
+      <a href="#lexique">Les mots</a>
+      <a href="#credits">Crédits</a>
+    </nav>
+    <div class="mode" role="group" aria-label="Choisir l’espace">
+      <button data-mode="eleve">Élève</button>
+      <button data-mode="prof">Enseignant</button>
+    </div>
+    <button class="burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ======================= ACCUEIL ======================= -->
+<div class="view" id="accueil">
+
+  <section class="hero">
+    <div class="bg"><img data-file="Ewaste.jpg" data-w="1920" alt="Un tas de vieux ordinateurs, d’écrans et de câbles jetés"></div>
+    <div class="wrap">
+      <p class="eyebrow">Démarche NIRD · CM1-CM2 · Lycée français de Vienne</p>
+      <h1>Réparer, libérer, partager</h1>
+      <p class="lead">Ces ordinateurs devaient partir à la poubelle. Pourtant, ils fonctionnent encore. Cette année, les élèves vont apprendre à les comprendre, à les réparer, à leur installer un système libre… et à les donner.</p>
+      <div class="btns">
+        <a class="btn primary" href="#sequence" data-go-mode="eleve">Je suis élève</a>
+        <a class="btn light" href="#sequence" data-go-mode="prof">Je suis enseignant</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap grid g2" style="align-items:center">
+      <div class="reveal">
+        <p class="eyebrow">Le point de départ</p>
+        <h2>Des ordinateurs « obsolètes »… qui marchent encore</h2>
+        <p>Beaucoup d’ordinateurs d’écoles ne peuvent pas passer à Windows 11. On les dit <span class="mot" data-mot="obsolete">obsolètes</span>, alors qu’ils fonctionnent. Or la plus grande partie de la pollution d’un ordinateur vient de sa <b>fabrication</b> : le garder plus longtemps est le geste le plus utile pour la planète.</p>
+        <p>La démarche NIRD propose une autre voie : <b>réparer</b> ces machines, leur installer <span class="mot" data-mot="linux">Linux</span>, un <span class="mot" data-mot="systeme">système d’exploitation</span> libre, puis les <b>redonner</b>.</p>
+      </div>
+      <figure class="photo reveal"><img data-file="Ewaste-pile.jpg" data-w="1000" alt="Une pile de vieux ordinateurs et d’écrans"><figcaption>Une pile d’ordinateurs promis à la benne</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="wrap">
+      <p class="eyebrow">Trois lettres, trois engagements</p>
+      <h2>NIRD : un numérique Inclusif, Responsable et Durable</h2>
+      <div class="grid g3" style="margin-top:28px">
+        <div class="card reveal"><div class="letter bg-blue">I</div><h3>Inclusif</h3><p>Le numérique pour tous : des logiciels gratuits que l’élève retrouve à la maison, des ordinateurs donnés à ceux qui en ont besoin.</p></div>
+        <div class="card reveal"><div class="letter bg-rust">R</div><h3>Responsable</h3><p>Des <span class="mot" data-mot="libre">logiciels libres</span> qui respectent nos données : pas de publicité, pas de collecte commerciale.</p></div>
+        <div class="card reveal"><div class="letter bg-green">D</div><h3>Durable</h3><p>Faire durer le matériel au lieu de le jeter : moins de <span class="mot" data-mot="dechet">déchets électroniques</span>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <p class="eyebrow">Sur quoi les élèves vont travailler</p>
+      <h2>De vraies pièces, de vrais gestes</h2>
+      <p class="lead">Les élèves vont ouvrir des ordinateurs, découvrir ce qu’il y a dedans et changer eux-mêmes certaines pièces.</p>
+      <div class="strip" style="margin-top:20px">
+        <figure class="photo"><img data-file="HP_ProDesk_600_G1_Tower_PC-001.jpg" data-w="600" alt="Une unité centrale"><figcaption>L’unité centrale</figcaption></figure>
+        <figure class="photo"><img data-file="ATX_computer_case.jpg" data-w="700" alt="L’intérieur d’un ordinateur"><figcaption>L’intérieur de l’ordinateur</figcaption></figure>
+        <figure class="photo"><img data-file="Computer_Motherboard_Closeup.jpg" data-w="700" alt="Une carte mère vue de près"><figcaption>La carte mère</figcaption></figure>
+        <figure class="photo contain"><img data-file="CR2032_battery,_Mitsubishi,_computer_backup_battery-2423.jpg" data-w="600" alt="Une pile bouton CR2032"><figcaption>La pile de la carte mère</figcaption></figure>
+        <figure class="photo"><img data-file="Laptop-hard-drive-exposed.jpg" data-w="700" alt="Un disque dur ouvert"><figcaption>Le disque dur, ouvert</figcaption></figure>
+        <figure class="photo contain"><img data-file="Samsung_SSD_850_PRO_512GB.jpg" data-w="600" alt="Un disque SSD"><figcaption>Le SSD qui le remplace</figcaption></figure>
+        <figure class="photo contain"><img data-file="Maxell_USB_flash_drive.jpg" data-w="600" alt="Une clé USB"><figcaption>La clé USB d’installation</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block dark">
+    <div class="wrap">
+      <p class="eyebrow">Une démarche déjà en marche</p>
+      <h2>32 établissements pilotes en France en 2025-2026</h2>
+      <div class="grid g4" style="margin-top:28px">
+        <div class="card reveal"><div class="stat">3</div><p>écoles</p></div>
+        <div class="card reveal"><div class="stat">10</div><p>collèges</p></div>
+        <div class="card reveal"><div class="stat">2</div><p>cités scolaires</p></div>
+        <div class="card reveal"><div class="stat">17</div><p>lycées</p></div>
+      </div>
+      <p style="margin-top:24px">À l’école Louis Barrié de Figeac, une classe de CM2 a reconditionné <b>11 ordinateurs</b> en une année, puis les a donnés à d’autres classes. En juin, une équipe d’élèves « experts » travaillait en totale autonomie. C’est ce projet qui inspire notre séquence.</p>
+      <div class="btns"><a class="btn primary" href="#sequence">Découvrir la séquence</a><a class="btn light" href="https://nird.forge.apps.education.fr/index.html">Le site national NIRD</a></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <p class="eyebrow">Ce que les élèves y gagnent</p>
+      <h2>Un projet au cœur des programmes</h2>
+      <div class="grid g3" style="margin-top:24px">
+        <div class="card reveal"><h3>Sciences et technologie</h3><p>L’objet technique : ses composants, ses fonctions, sa durée de vie. La démarche d’investigation. La conception en équipe.</p></div>
+        <div class="card reveal"><h3>EMC et développement durable</h3><p>Agir pour l’intérêt général, débattre, coopérer, protéger l’environnement et les données personnelles.</p></div>
+        <div class="card reveal"><h3>Français et numérique</h3><p>Lire, argumenter, présenter à l’oral, écrire des fiches. Comprendre et maîtriser un ordinateur.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======================= SÉQUENCE ======================= -->
+<div class="view" id="sequence">
+  <div class="s-head"><div class="wrap">
+    <p class="eyebrow">La séquence</p>
+    <h1>14 séances, de novembre à juin</h1>
+    <p>Chaque séance dure environ une heure. Les séances 1 à 3 sont prêtes ; les suivantes arrivent bientôt.</p>
+    <div class="s-meta"><span>CM1-CM2</span><span>≈ 1 h par séance</span><span>5 phases</span></div>
+  </div></div>
+  <div class="wrap">
+
+    <div class="phase-title"><span>Phase 1</span><h2 style="margin:0">Entrer dans le projet</h2></div>
+    <div class="grid g2">
+      <a class="card seance" href="#seance-1"><div class="num">1</div><div><h3>Des ordinateurs à la poubelle ?</h3><p>On découvre des ordinateurs qu’on veut jeter, et on se demande quoi en faire.</p><span class="tag ok">Prête</span></div></a>
+      <a class="card seance" href="#seance-2"><div class="num">2</div><div><h3>Ada &amp; Zangemann</h3><p>On lit une histoire pour comprendre ce qu’est un logiciel libre.</p><span class="tag ok">Prête</span></div></a>
+    </div>
+
+    <div class="phase-title"><span>Phase 2</span><h2 style="margin:0">Comprendre l’ordinateur</h2></div>
+    <div class="grid g2">
+      <a class="card seance" href="#seance-3"><div class="num">3</div><div><h3>Brancher et démarrer</h3><p>Le défi : faire démarrer un ordinateur livré en pièces détachées.</p><span class="tag ok">Prête</span></div></a>
+      <div class="card seance soon"><div class="num">4</div><div><h3>Dans les entrailles de l’ordinateur</h3><p>On ouvre l’unité centrale et on nomme ses pièces.</p><span class="tag">Bientôt</span></div></div>
+      <div class="card seance soon"><div class="num">5</div><div><h3>Réparer une panne</h3><p>Une enquête : le message « batterie faible » et la pile.</p><span class="tag">Bientôt</span></div></div>
+    </div>
+
+    <div class="phase-title"><span>Phase 3</span><h2 style="margin:0">Comprendre les enjeux</h2></div>
+    <div class="grid g2">
+      <div class="card seance soon"><div class="num">6</div><div><h3>Ce que coûte un ordinateur à la planète</h3><p>Mesurer l’impact du numérique avec des données fiables.</p><span class="tag">Bientôt</span></div></div>
+      <div class="card seance soon"><div class="num">7</div><div><h3>Réparer ou racheter ?</h3><p>Débattre, et protéger les données avant de donner.</p><span class="tag">Bientôt</span></div></div>
+    </div>
+
+    <div class="phase-title"><span>Phase 4</span><h2 style="margin:0">Le geste technique</h2></div>
+    <div class="grid g2">
+      <div class="card seance soon"><div class="num">8</div><div><h3>Changer le disque</h3><p>Comparer disque dur et SSD, puis faire l’échange.</p><span class="tag">Bientôt</span></div></div>
+      <div class="card seance soon"><div class="num">9</div><div><h3>Installer un système libre</h3><p>Démarrer sur une clé, installer PrimTux.</p><span class="tag">Bientôt</span></div></div>
+      <div class="card seance soon"><div class="num">10</div><div><h3>S’organiser comme une équipe</h3><p>Écrire les cartes missions, se répartir les rôles.</p><span class="tag">Bientôt</span></div></div>
+    </div>
+
+    <div class="phase-title"><span>Phase 5</span><h2 style="margin:0">Agir pour les autres</h2></div>
+    <div class="grid g2" style="margin-bottom:60px">
+      <div class="card seance soon"><div class="num">11</div><div><h3>Atelier de reconditionnement</h3><p>Remettre en état un lot de machines et documenter.</p><span class="tag">Bientôt</span></div></div>
+      <div class="card seance soon"><div class="num">12</div><div><h3>Préparer la présentation</h3><p>Construire l’exposé pour ceux qui recevront les ordinateurs.</p><span class="tag">Bientôt</span></div></div>
+      <div class="card seance soon"><div class="num">13</div><div><h3>Livrer et présenter</h3><p>Installer les postes, présenter son travail.</p><span class="tag">Bientôt</span></div></div>
+      <div class="card seance soon"><div class="num">14</div><div><h3>Bilan et prolongement</h3><p>Faire le bilan, découvrir la programmation.</p><span class="tag">Bientôt</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= SÉANCE 1 ======================= -->
+<div class="view" id="seance-1">
+  <div class="s-head"><div class="wrap">
+    <p class="eyebrow">Phase 1 · Séance 1</p>
+    <h1>Des ordinateurs à la poubelle ?</h1>
+    <p>Aujourd’hui, je découvre des ordinateurs qu’on veut jeter et je réfléchis à ce qu’on pourrait en faire.</p>
+    <div class="s-meta"><span>⏱ 1 h</span><span>Seul, puis en groupe</span><span class="only-prof">Fiche élève + guide</span></div>
+  </div></div>
+  <div class="toolbar no-print"><div class="wrap">
+    <button class="btn small primary" data-print>🖨 Imprimer</button>
+    <button class="btn small ghost" data-clear>Effacer ma fiche</button>
+    <span class="progress-txt only-eleve" style="font-weight:700"></span>
+    <span class="info"></span>
+  </div></div>
+  <div class="wrap">
+
+    <!-- Guide enseignant -->
+    <div class="guide only-prof">
+      <h2>Séance 1</h2>
+      <div class="grid g2">
+        <div>
+          <h3>Objectifs</h3>
+          <ul><li>Faire naître le projet à partir d’un problème réel.</li><li>Faire émerger les représentations des élèves sur l’ordinateur et sa durée de vie.</li><li>Formuler des hypothèses et choisir collectivement une action.</li></ul>
+          <h3>Matériel</h3>
+          <ul><li>Si possible 2 ou 3 vrais ordinateurs mis de côté par le service informatique (sinon, les photos de la fiche).</li><li>Vidéoprojecteur, tableau pour la carte mentale.</li><li>La fiche élève, imprimée ou sur écran.</li></ul>
+        </div>
+        <div>
+          <h3>Déroulé</h3>
+          <ol class="timeline">
+            <li><b>Accroche</b><span class="min">10 min</span><br>Montrer les ordinateurs : « Le service informatique va les jeter. Pourtant, ils marchent. » On en allume un si possible.</li>
+            <li><b>Je réfléchis seul</b><span class="min">5 min</span><br>Activité 1 de la fiche.</li>
+            <li><b>Nos hypothèses en groupe</b><span class="min">15 min</span><br>Activité 2, groupes de 3 ou 4.</li>
+            <li><b>Mise en commun</b><span class="min">15 min</span><br>Carte mentale au tableau. L’enseignant apporte l’explication (ci-dessous).</li>
+            <li><b>Le projet et le destinataire</b><span class="min">10 min</span><br>Activités 3 et 4 : on annonce le projet, la classe vote.</li>
+            <li><b>Je retiens</b><span class="min">5 min</span><br>Texte à trous, lu ensemble.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="note" style="margin-top:16px">
+        <b>L’explication à apporter, avec des mots simples :</b> l’entreprise qui fabrique Windows a arrêté les <span class="mot" data-mot="mise-a-jour">mises à jour</span> de Windows 10. Ces ordinateurs sont trop anciens pour Windows 11. Sans mises à jour, ils sont moins protégés, alors on les remplace… même s’ils fonctionnent. Le problème vient du <span class="mot" data-mot="logiciel">logiciel</span>, pas de la machine.
+        <br><br><b>Hypothèses fréquentes des élèves :</b> « il est cassé », « il est trop lent », « il est trop vieux », « il n’est plus à la mode ». Les accueillir toutes : elles seront vérifiées au fil de l’année.
+      </div>
+      <h3 style="margin-top:24px">Liens avec les programmes</h3>
+      <div class="links-prog">
+        <div><b>Sciences et technologie :</b> repérer les évolutions d’un objet selon les contextes, dont le développement durable ; identifier les caractéristiques d’un objet selon son contexte d’utilisation (CM1).</div>
+        <div><b>EDD :</b> domaine 1, se questionner avec esprit critique ; domaine 3, les effets des activités humaines.</div>
+        <div><b>EMC :</b> CM1, le civisme envers l’environnement.</div>
+        <div><b>Numérique :</b> première approche du système d’exploitation et des mises à jour.</div>
+        <div><b>Compétences transversales :</b> s’exprimer à l’oral, formuler une hypothèse, s’engager dans un projet collectif.</div>
+      </div>
+      <h3 style="margin-top:24px">Différenciation et points de vigilance</h3>
+      <ul><li>Écrit difficile : dictée à l’adulte ou à un camarade, ou réponse dessinée.</li><li>Les « mots du jour » sont cliquables partout sur le site : leur définition s’affiche.</li><li>Ne pas culpabiliser les familles qui changent souvent d’appareil : on parle d’objets, pas de personnes.</li><li>Vérifier avant la séance avec le service informatique que les machines pourront bien être utilisées dans le projet.</li></ul>
+    </div>
+
+    <!-- Fiche élève -->
+    <div class="fiche">
+      <div class="ident">
+        <div><label>Prénom</label><input data-id="prenom" data-k="id-prenom"></div>
+        <div><label>Classe</label><input data-id="classe" data-k="id-classe"></div>
+        <div><label>Groupe</label><input data-id="groupe" data-k="id-groupe"></div>
+        <div><label>Date</label><input data-k="s1-date"></div>
+      </div>
+
+      <div class="grid g2" style="align-items:center">
+        <figure class="photo"><img data-file="Ewaste-pile.jpg" data-w="900" alt="Une pile de vieux ordinateurs"><figcaption>Des ordinateurs mis de côté</figcaption></figure>
+        <div>
+          <h2>La situation</h2>
+          <p>Le service informatique de l’établissement a mis de côté des ordinateurs. Ils vont partir à la benne. Pourtant, quand on les allume… <b>ils marchent !</b></p>
+          <p class="consigne">Pourquoi veut-on jeter des ordinateurs qui fonctionnent encore ? Que pourrait-on en faire ?</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:28px">Les mots du jour</h3>
+      <div class="mots">
+        <div class="mot-card"><b>Ordinateur</b>Une machine qui suit des instructions pour écrire, dessiner, calculer ou jouer.</div>
+        <div class="mot-card"><b>Système d’exploitation</b>Le « chef d’orchestre » de l’ordinateur : le premier logiciel qui démarre et fait marcher les autres.</div>
+        <div class="mot-card"><b>Mise à jour</b>Une nouvelle version d’un logiciel, pour le corriger ou l’améliorer.</div>
+        <div class="mot-card"><b>Obsolète</b>Considéré comme trop vieux, même si ça fonctionne encore.</div>
+      </div>
+
+      <div class="act">
+        <h3><span class="n">1</span>Je réfléchis seul<span class="time">5 min</span></h3>
+        <p class="consigne">À ton avis, pourquoi veut-on jeter ces ordinateurs ? Écris ton idée.</p>
+        <div class="write" data-k="s1-a1" data-ph="Je pense qu’on veut les jeter parce que…"></div>
+      </div>
+
+      <div class="act">
+        <h3><span class="n">2</span>En groupe : nos hypothèses<span class="time">15 min</span></h3>
+        <p class="consigne">Mettez vos idées en commun. Écrivez trois <span class="mot" data-mot="hypothese">hypothèses</span>, et ce qui vous fait penser ça.</p>
+        <table class="t">
+          <tr><th style="width:50%">Nous pensons que…</th><th>… parce que…</th></tr>
+          <tr><td><div class="write" data-k="s1-h1"></div></td><td><div class="write" data-k="s1-p1"></div></td></tr>
+          <tr><td><div class="write" data-k="s1-h2"></div></td><td><div class="write" data-k="s1-p2"></div></td></tr>
+          <tr><td><div class="write" data-k="s1-h3"></div></td><td><div class="write" data-k="s1-p3"></div></td></tr>
+        </table>
+      </div>
+
+      <div class="act">
+        <h3><span class="n">3</span>Que peut-on faire de ces ordinateurs ?<span class="time">5 min</span></h3>
+        <p class="consigne">Coche toutes les idées possibles, puis entoure (ou écris) celle que ton groupe préfère.</p>
+        <div class="checks">
+          <label><input type="checkbox" data-k="s1-c1"> Les jeter à la poubelle</label>
+          <label><input type="checkbox" data-k="s1-c2"> Les réparer</label>
+          <label><input type="checkbox" data-k="s1-c3"> Les donner à quelqu’un</label>
+          <label><input type="checkbox" data-k="s1-c4"> Les <span class="mot" data-mot="recycler">recycler</span></label>
+          <label><input type="checkbox" data-k="s1-c5"> Les garder dans un placard</label>
+          <label><input type="checkbox" data-k="s1-c6"> Autre idée</label>
+        </div>
+        <p style="margin-top:14px"><b>Notre choix, et pourquoi :</b></p>
+        <div class="write" data-k="s1-a3"></div>
+      </div>
+
+      <div class="act">
+        <h3><span class="n">4</span>À qui pourrait-on les donner ?<span class="time">5 min</span></h3>
+        <p class="consigne">Si on les répare, qui pourrait s’en servir ? Propose une idée, puis note le choix de la classe.</p>
+        <div class="write short" data-k="s1-a4" data-ph="Mon idée : …"></div>
+        <p style="margin-top:12px"><b>Le choix de la classe :</b></p>
+        <div class="write short" data-k="s1-a4b"></div>
+      </div>
+
+      <div class="retiens" data-check>
+        <h3>Je retiens</h3>
+        <p>Un ordinateur dit <b>obsolète</b> n’est pas forcément cassé. Souvent, c’est son
+          <input class="blank" data-k="s1-t1" data-answer="logiciel|système|systeme|système d’exploitation|système d'exploitation" placeholder="………">
+          qui n’est plus mis à jour. Au lieu de le jeter, on peut le
+          <input class="blank" data-k="s1-t2" data-answer="réparer|reparer" placeholder="………">
+          et le
+          <input class="blank" data-k="s1-t3" data-answer="donner|redonner" placeholder="………">.</p>
+        <button class="btn small ghost no-print" data-check-btn>Vérifier mes réponses</button>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="act">
+        <h3>Mon bilan</h3>
+        <p>J’ai compris pourquoi on veut jeter ces ordinateurs :</p>
+        <div class="radios">
+          <label><input type="radio" name="s1-b" value="oui" data-k="s1-b"> Oui</label>
+          <label><input type="radio" name="s1-b" value="un peu" data-k="s1-b"> Un peu</label>
+          <label><input type="radio" name="s1-b" value="pas encore" data-k="s1-b"> Pas encore</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="s-nav no-print"><a class="btn ghost" href="#sequence">← La séquence</a><a class="btn primary" href="#seance-2">Séance 2 →</a></div>
+  </div>
+</div>
+
+<!-- ======================= SÉANCE 2 ======================= -->
+<div class="view" id="seance-2">
+  <div class="s-head"><div class="wrap">
+    <p class="eyebrow">Phase 1 · Séance 2</p>
+    <h1>Ada &amp; Zangemann</h1>
+    <p>Aujourd’hui, je lis une histoire pour comprendre ce qu’est un logiciel libre, et je donne mon avis.</p>
+    <div class="s-meta"><span>⏱ 1 h</span><span>Lecture, puis débat</span><span class="only-prof">Fiche élève + guide</span></div>
+  </div></div>
+  <div class="toolbar no-print"><div class="wrap">
+    <button class="btn small primary" data-print>🖨 Imprimer</button>
+    <button class="btn small ghost" data-clear>Effacer ma fiche</button>
+    <span class="progress-txt only-eleve" style="font-weight:700"></span>
+    <span class="info"></span>
+  </div></div>
+  <div class="wrap">
+
+    <div class="guide only-prof">
+      <h2>Séance 2</h2>
+      <div class="grid g2">
+        <div>
+          <h3>Objectifs</h3>
+          <ul><li>Comprendre, à travers un récit, ce qu’est un logiciel et la différence entre logiciel libre et logiciel propriétaire.</li><li>Débattre en argumentant et en écoutant les autres.</li><li>Montrer une fille inventrice : l’égalité filles-garçons dans le numérique.</li></ul>
+          <h3>Matériel</h3>
+          <ul><li>Le conte <i>Ada &amp; Zangemann</i>, de Matthias Kirschner (texte) et Sandra Brandstätter (illustrations). Une version numérique libre est proposée sur <a href="https://ada-zangemann.forge.apps.education.fr/">ada-zangemann.forge.apps.education.fr</a>.</li><li>Vidéoprojecteur pour la lecture.</li><li>La fiche élève.</li></ul>
+        </div>
+        <div>
+          <h3>Déroulé</h3>
+          <ol class="timeline">
+            <li><b>Avant la lecture</b><span class="min">5 min</span><br>Activité 1 : hypothèses sur le titre.</li>
+            <li><b>Lecture offerte</b><span class="min">15 min</span><br>L’enseignant lit le conte en projetant les illustrations.</li>
+            <li><b>Les personnages et l’histoire</b><span class="min">10 min</span><br>Activités 2 et 3, en binômes.</li>
+            <li><b>Libre ou propriétaire ?</b><span class="min">10 min</span><br>Activité 4, avec correction automatique sur écran ou correction collective.</li>
+            <li><b>Débat</b><span class="min">15 min</span><br>Activité 5. Rappeler les règles : lever la main, écouter, répondre à l’idée et pas à la personne.</li>
+            <li><b>Je retiens</b><span class="min">5 min</span></li>
+          </ol>
+        </div>
+      </div>
+      <div class="note" style="margin-top:16px">
+        <b>À faire ressortir :</b> un <span class="mot" data-mot="logiciel">logiciel</span>, ce sont les instructions qui disent à un objet ce qu’il doit faire. Dans l’histoire, celui qui écrit ces instructions décide de ce que les autres ont le droit de faire avec leurs objets. Un <span class="mot" data-mot="libre">logiciel libre</span> donne ce pouvoir à tout le monde : on peut l’utiliser, l’étudier, le modifier et le partager. C’est le cas de <span class="mot" data-mot="linux">Linux</span> et de <span class="mot" data-mot="primtux">PrimTux</span>, que la classe installera plus tard.
+        <br><br><b>Corrigé de l’activité 4 :</b> libre pour les phrases 1, 3 et 5 ; propriétaire pour les phrases 2, 4 et 6.
+      </div>
+      <h3 style="margin-top:24px">Liens avec les programmes</h3>
+      <div class="links-prog">
+        <div><b>Sciences et technologie :</b> égalité filles-garçons et formation citoyenne, deux principes du programme ; culture numérique.</div>
+        <div><b>EDD :</b> domaine 4, les valeurs de partage et le souci du bien commun.</div>
+        <div><b>EMC :</b> CM1, l’égalité dans la dignité et l’égalité filles-garçons, débattre en nuançant son avis ; CM2, la liberté et ses règles.</div>
+        <div><b>Numérique :</b> distinguer logiciel libre et logiciel propriétaire.</div>
+        <div><b>Compétences transversales :</b> lire et comprendre un récit, argumenter à l’oral, écouter l’avis des autres.</div>
+      </div>
+      <h3 style="margin-top:24px">Différenciation et points de vigilance</h3>
+      <ul><li>Les questions de l’activité 3 sont ouvertes : accepter toute réponse justifiée par le texte.</li><li>Lecteurs fragiles : relire les passages clés, ou travailler l’activité 2 à l’oral.</li><li>Pendant le débat, ne pas diaboliser une marque : on parle de choix et de liberté.</li></ul>
+    </div>
+
+    <div class="fiche">
+      <div class="ident">
+        <div><label>Prénom</label><input data-id="prenom" data-k="id-prenom"></div>
+        <div><label>Classe</label><input data-id="classe" data-k="id-classe"></div>
+        <div><label>Groupe</label><input data-id="groupe" data-k="id-groupe"></div>
+        <div><label>Date</label><input data-k="s2-date"></div>
+      </div>
+
+      <h2>Une histoire d’inventeurs</h2>
+      <p>Ada est une jeune fille qui aime bricoler. Zangemann est un <span class="mot" data-mot="inventeur">inventeur</span> très célèbre, dont les inventions se trouvent partout. Que va-t-il se passer entre eux ?</p>
+
+      <h3>Les mots du jour</h3>
+      <div class="mots">
+        <div class="mot-card"><b>Logiciel</b>Une liste d’instructions qui dit à l’ordinateur (ou à un objet) ce qu’il doit faire. Comme une recette de cuisine.</div>
+        <div class="mot-card"><b>Logiciel libre</b>Tout le monde a le droit de l’utiliser, de l’étudier, de le modifier et de le partager.</div>
+        <div class="mot-card"><b>Logiciel propriétaire</b>On ne peut ni voir ni changer sa recette : son fabricant décide de tout.</div>
+        <div class="mot-card"><b>Inventeur, inventrice</b>Une personne qui imagine et fabrique un objet nouveau.</div>
+      </div>
+
+      <div class="act">
+        <h3><span class="n">1</span>Avant la lecture<span class="time">5 min</span></h3>
+        <p class="consigne">Le titre est « Ada &amp; Zangemann ». À ton avis, de quoi va parler l’histoire ?</p>
+        <div class="write" data-k="s2-a1" data-ph="Je pense que l’histoire va parler de…"></div>
+      </div>
+
+      <div class="act">
+        <h3><span class="n">2</span>Les personnages<span class="time">5 min</span></h3>
+        <p class="consigne">Après la lecture, complète le tableau.</p>
+        <table class="t">
+          <tr><th style="width:22%"></th><th>Ada</th><th>Zangemann</th></tr>
+          <tr><td><b>Qui est-ce ?</b></td><td><div class="write" data-k="s2-p1a"></div></td><td><div class="write" data-k="s2-p1z"></div></td></tr>
+          <tr><td><b>Que fait-il ou elle ?</b></td><td><div class="write" data-k="s2-p2a"></div></td><td><div class="write" data-k="s2-p2z"></div></td></tr>
+          <tr><td><b>Ce que j’en pense</b></td><td><div class="write" data-k="s2-p3a"></div></td><td><div class="write" data-k="s2-p3z"></div></td></tr>
+        </table>
+      </div>
+
+      <div class="act">
+        <h3><span class="n">3</span>J’ai compris l’histoire<span class="time">5 min</span></h3>
+        <p><b>a.</b> Que peuvent faire, ou ne pas faire, les gens avec les objets inventés par Zangemann ?</p>
+        <div class="write short" data-k="s2-q1"></div>
+        <p style="margin-top:12px"><b>b.</b> Que fait Ada avec les objets qu’elle trouve ?</p>
+        <div class="write short" data-k="s2-q2"></div>
+        <p style="margin-top:12px"><b>c.</b> Comment l’histoire se termine-t-elle ?</p>
+        <div class="write short" data-k="s2-q3"></div>
+      </div>
+
+      <div class="act" data-check>
+        <h3><span class="n">4</span>Libre ou propriétaire ?<span class="time">10 min</span></h3>
+        <p class="consigne">Pour chaque phrase, coche s’il s’agit d’un logiciel libre ou d’un logiciel propriétaire.</p>
+        <div class="sort-row" data-answer="libre"><span>1. Je peux voir comment il est fabriqué.</span><div class="radios"><label><input type="radio" name="s2-s1" value="libre" data-k="s2-s1"> Libre</label><label><input type="radio" name="s2-s1" value="prop" data-k="s2-s1"> Propriétaire</label></div></div>
+        <div class="sort-row" data-answer="prop"><span>2. Seul le fabricant a le droit de le modifier.</span><div class="radios"><label><input type="radio" name="s2-s2" value="libre" data-k="s2-s2"> Libre</label><label><input type="radio" name="s2-s2" value="prop" data-k="s2-s2"> Propriétaire</label></div></div>
+        <div class="sort-row" data-answer="libre"><span>3. J’ai le droit de le partager avec mes amis.</span><div class="radios"><label><input type="radio" name="s2-s3" value="libre" data-k="s2-s3"> Libre</label><label><input type="radio" name="s2-s3" value="prop" data-k="s2-s3"> Propriétaire</label></div></div>
+        <div class="sort-row" data-answer="prop"><span>4. Le fabricant décide seul de ce que j’ai le droit de faire avec.</span><div class="radios"><label><input type="radio" name="s2-s4" value="libre" data-k="s2-s4"> Libre</label><label><input type="radio" name="s2-s4" value="prop" data-k="s2-s4"> Propriétaire</label></div></div>
+        <div class="sort-row" data-answer="libre"><span>5. Je peux l’améliorer et donner ma version aux autres.</span><div class="radios"><label><input type="radio" name="s2-s5" value="libre" data-k="s2-s5"> Libre</label><label><input type="radio" name="s2-s5" value="prop" data-k="s2-s5"> Propriétaire</label></div></div>
+        <div class="sort-row" data-answer="prop"><span>6. Sa « recette » est un secret.</span><div class="radios"><label><input type="radio" name="s2-s6" value="libre" data-k="s2-s6"> Libre</label><label><input type="radio" name="s2-s6" value="prop" data-k="s2-s6"> Propriétaire</label></div></div>
+        <button class="btn small ghost no-print" style="margin-top:14px" data-check-btn>Vérifier mes réponses</button>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="act">
+        <h3><span class="n">5</span>Le débat<span class="time">15 min</span></h3>
+        <p class="consigne">Est-ce important de pouvoir réparer, modifier et partager les objets et les logiciels qu’on utilise ?</p>
+        <p><b>Avant le débat, mon avis et mes arguments :</b></p>
+        <div class="write" data-k="s2-d1" data-ph="Je pense que… parce que…"></div>
+        <p style="margin-top:12px"><b>Un argument d’un camarade qui m’a fait réfléchir :</b></p>
+        <div class="write short" data-k="s2-d2"></div>
+        <p style="margin-top:12px">Après le débat, mon avis a-t-il changé ?</p>
+        <div class="radios">
+          <label><input type="radio" name="s2-d3" value="non" data-k="s2-d3"> Non</label>
+          <label><input type="radio" name="s2-d3" value="un peu" data-k="s2-d3"> Un peu</label>
+          <label><input type="radio" name="s2-d3" value="oui" data-k="s2-d3"> Oui</label>
+        </div>
+      </div>
+
+      <div class="retiens" data-check>
+        <h3>Je retiens</h3>
+        <p>Un <b>logiciel</b>, c’est une liste d’
+          <input class="blank" data-k="s2-t1" data-answer="instructions|instruction" placeholder="………">
+          qui dit à l’ordinateur ce qu’il doit faire. Un logiciel <b>libre</b> peut être utilisé, étudié, modifié et
+          <input class="blank" data-k="s2-t2" data-answer="partagé|partage|partager" placeholder="………">
+          par tout le monde.</p>
+        <button class="btn small ghost no-print" data-check-btn>Vérifier mes réponses</button>
+        <div class="feedback"></div>
+      </div>
+    </div>
+
+    <div class="s-nav no-print"><a class="btn ghost" href="#seance-1">← Séance 1</a><a class="btn primary" href="#seance-3">Séance 3 →</a></div>
+  </div>
+</div>
+
+<!-- ======================= SÉANCE 3 ======================= -->
+<div class="view" id="seance-3">
+  <div class="s-head"><div class="wrap">
+    <p class="eyebrow">Phase 2 · Séance 3</p>
+    <h1>Brancher et démarrer</h1>
+    <p>Aujourd’hui, avec mon groupe, je relève un défi : faire démarrer un ordinateur livré en pièces détachées.</p>
+    <div class="s-meta"><span>⏱ 1 h</span><span>Par groupes de 3 ou 4</span><span class="only-prof">Fiche élève + guide</span></div>
+  </div></div>
+  <div class="toolbar no-print"><div class="wrap">
+    <button class="btn small primary" data-print>🖨 Imprimer</button>
+    <button class="btn small ghost" data-clear>Effacer ma fiche</button>
+    <span class="progress-txt only-eleve" style="font-weight:700"></span>
+    <span class="info"></span>
+  </div></div>
+  <div class="wrap">
+
+    <div class="guide only-prof">
+      <h2>Séance 3</h2>
+      <div class="grid g2">
+        <div>
+          <h3>Objectifs</h3>
+          <ul><li>Découvrir l’ordinateur comme un système fait d’éléments reliés entre eux.</li><li>Distinguer l’unité centrale et les périphériques, l’entrée et la sortie.</li><li>Chercher par essais et erreurs, en équipe.</li></ul>
+          <h3>Matériel par groupe</h3>
+          <ul><li>1 unité centrale, 1 écran, 1 clavier, 1 souris.</li><li>1 câble d’alimentation pour l’unité centrale, 1 pour l’écran, 1 câble vidéo (HDMI ou VGA selon les machines).</li><li>Facultatif : un câble « intrus » qui ne sert à rien, pour corser le défi.</li><li>Une multiprise avec interrupteur, sous le contrôle de l’adulte.</li></ul>
+        </div>
+        <div>
+          <h3>Déroulé</h3>
+          <ol class="timeline">
+            <li><b>Présentation du défi</b><span class="min">5 min</span><br>Règle de sécurité : on ne branche sur le courant qu’avec l’accord de l’adulte.</li>
+            <li><b>Le défi</b><span class="min">20 min</span><br>Activités 1 et 2 : les groupes cherchent et notent chaque essai.</li>
+            <li><b>Ça marche : on explique</b><span class="min">10 min</span><br>Chaque groupe raconte ce qui a fonctionné et ce qui a raté.</li>
+            <li><b>J’identifie chaque élément</b><span class="min">15 min</span><br>Activités 3 et 4, mise en commun du vocabulaire.</li>
+            <li><b>Je retiens</b><span class="min">10 min</span></li>
+          </ol>
+        </div>
+      </div>
+      <div class="note" style="margin-top:16px">
+        <b>Coups de pouce possibles</b>, à donner un par un : 1. « Chaque câble a une seule prise qui lui correspond : regardez les formes. » 2. « Qu’est-ce qui a besoin d’électricité ? » 3. « Comment l’image va-t-elle de la boîte à l’écran ? »
+        <br><br><b>Corrigé de l’activité 3 :</b> unité centrale → unité centrale ; écran → sortie ; clavier → entrée ; souris → entrée ; câble d’alimentation et câble vidéo → câble.
+      </div>
+      <h3 style="margin-top:24px">Liens avec les programmes</h3>
+      <div class="links-prog">
+        <div><b>Sciences et technologie :</b> identifier les sous-ensembles d’un objet technique ; lister et justifier les éléments d’un objet (CM1).</div>
+        <div><b>EDD :</b> pas de lien direct dans cette séance.</div>
+        <div><b>EMC :</b> coopérer dans le groupe, respecter la parole de chacun.</div>
+        <div><b>Numérique :</b> évoluer dans un environnement numérique : brancher, démarrer, se repérer.</div>
+        <div><b>Compétences transversales :</b> chercher par essais et erreurs, coopérer, employer un vocabulaire précis.</div>
+      </div>
+      <h3 style="margin-top:24px">Points de vigilance</h3>
+      <ul><li>La sécurité électrique d’abord : l’adulte allume la multiprise, jamais les élèves.</li><li>Répartir les rôles dans le groupe pour que chacun manipule (un qui branche, un qui vérifie, un qui note).</li><li>Prévoir des machines déjà testées : le but est de réussir à brancher, pas de réparer une panne.</li></ul>
+    </div>
+
+    <div class="fiche">
+      <div class="ident">
+        <div><label>Prénom</label><input data-id="prenom" data-k="id-prenom"></div>
+        <div><label>Classe</label><input data-id="classe" data-k="id-classe"></div>
+        <div><label>Groupe</label><input data-id="groupe" data-k="id-groupe"></div>
+        <div><label>Date</label><input data-k="s3-date"></div>
+      </div>
+
+      <h2>Le défi</h2>
+      <p class="consigne">Votre groupe reçoit un ordinateur en pièces détachées. Votre mission : le brancher et le faire démarrer !<br>⚠ Règle de sécurité : on ne branche sur le courant qu’avec l’accord de l’adulte.</p>
+
+      <h3>Ce que vous avez sur la table</h3>
+      <div class="grid g3">
+        <figure class="photo contain"><img data-file="HP_ProDesk_600_G1_Tower_PC-001.jpg" data-w="500" alt="Une unité centrale"><figcaption>L’unité centrale</figcaption></figure>
+        <figure class="photo contain"><img data-file="Computer_monitor.jpg" data-w="600" alt="Un écran plat"><figcaption>L’écran</figcaption></figure>
+        <figure class="photo contain"><img data-file="IBM_Model_M_keyboard_(PS-2)_and_mouse.jpg" data-w="800" alt="Un clavier et une souris"><figcaption>Le clavier et la souris</figcaption></figure>
+        <figure class="photo contain"><img data-file="Cable-secteur.JPG" data-w="600" alt="Un câble d’alimentation"><figcaption>Le câble d’alimentation</figcaption></figure>
+        <figure class="photo contain"><img data-file="HDMI_Cable.JPG" data-w="700" alt="Un câble HDMI"><figcaption>Un câble vidéo HDMI</figcaption></figure>
+        <figure class="photo contain"><img data-file="Male_VGA_connector.jpg" data-w="700" alt="Une prise de câble VGA"><figcaption>Un câble vidéo VGA</figcaption></figure>
+      </div>
+
+      <h3 style="margin-top:28px">Les mots du jour</h3>
+      <div class="mots">
+        <div class="mot-card"><b>Unité centrale</b>La grande boîte de l’ordinateur, qui contient ses pièces les plus importantes.</div>
+        <div class="mot-card"><b>Périphérique</b>Un appareil branché à l’unité centrale : écran, clavier, souris…</div>
+        <div class="mot-card"><b>Entrée / sortie</b>Un périphérique d’entrée envoie des informations à l’ordinateur. Un périphérique de sortie nous les montre.</div>
+        <div class="mot-card"><b>Câble d’alimentation</b>Le câble qui apporte l’électricité.</div>
+        <div class="mot-card"><b>Câble vidéo</b>Le câble qui transporte l’image jusqu’à l’écran (HDMI ou VGA).</div>
+        <div class="mot-card"><b>Port</b>L’endroit où l’on branche un câble. Chaque câble a sa forme de prise.</div>
+      </div>
+
+      <figure class="photo" style="aspect-ratio:16/7;margin-top:20px"><img data-file="PS2_keyboard_and_mouse_ports.jpg" data-w="1200" alt="Les prises à l’arrière d’une unité centrale"><figcaption>Indice : regardez bien les prises à l’arrière de l’unité centrale</figcaption></figure>
+
+      <div class="act">
+        <h3><span class="n">1</span>Avant de commencer<span class="time">5 min</span></h3>
+        <p class="consigne">Observez le matériel. Que faut-il brancher, et où ? Écrivez votre plan.</p>
+        <div class="write" data-k="s3-a1" data-ph="D’abord, nous allons brancher…"></div>
+      </div>
+
+      <div class="act">
+        <h3><span class="n">2</span>Notre carnet d’essais<span class="time">15 min</span></h3>
+        <p class="consigne">Notez chaque essai, même ceux qui ne marchent pas. On apprend aussi de ses erreurs !</p>
+        <table class="t">
+          <tr><th style="width:12%">Essai</th><th>Ce que nous avons fait</th><th style="width:30%">Résultat</th></tr>
+          <tr><td><b>1</b></td><td><div class="write" data-k="s3-e1"></div></td><td><div class="write" data-k="s3-r1"></div></td></tr>
+          <tr><td><b>2</b></td><td><div class="write" data-k="s3-e2"></div></td><td><div class="write" data-k="s3-r2"></div></td></tr>
+          <tr><td><b>3</b></td><td><div class="write" data-k="s3-e3"></div></td><td><div class="write" data-k="s3-r3"></div></td></tr>
+          <tr><td><b>4</b></td><td><div class="write" data-k="s3-e4"></div></td><td><div class="write" data-k="s3-r4"></div></td></tr>
+        </table>
+      </div>
+
+      <div class="act" data-check>
+        <h3><span class="n">3</span>J’identifie chaque élément<span class="time">10 min</span></h3>
+        <p class="consigne">Pour chaque élément, choisis sa famille, puis écris à quoi il sert.</p>
+        <table class="t">
+          <tr><th style="width:25%">Élément</th><th style="width:30%">Sa famille</th><th>À quoi sert-il ?</th></tr>
+          <tr><td><b>Unité centrale</b></td><td><select class="fam" data-k="s3-f1" data-answer="uc"><option value="">— choisir —</option><option value="uc">Unité centrale</option><option value="entree">Périphérique d’entrée</option><option value="sortie">Périphérique de sortie</option><option value="cable">Câble</option></select></td><td><div class="write" data-k="s3-u1"></div></td></tr>
+          <tr><td><b>Écran</b></td><td><select class="fam" data-k="s3-f2" data-answer="sortie"><option value="">— choisir —</option><option value="uc">Unité centrale</option><option value="entree">Périphérique d’entrée</option><option value="sortie">Périphérique de sortie</option><option value="cable">Câble</option></select></td><td><div class="write" data-k="s3-u2"></div></td></tr>
+          <tr><td><b>Clavier</b></td><td><select class="fam" data-k="s3-f3" data-answer="entree"><option value="">— choisir —</option><option value="uc">Unité centrale</option><option value="entree">Périphérique d’entrée</option><option value="sortie">Périphérique de sortie</option><option value="cable">Câble</option></select></td><td><div class="write" data-k="s3-u3"></div></td></tr>
+          <tr><td><b>Souris</b></td><td><select class="fam" data-k="s3-f4" data-answer="entree"><option value="">— choisir —</option><option value="uc">Unité centrale</option><option value="entree">Périphérique d’entrée</option><option value="sortie">Périphérique de sortie</option><option value="cable">Câble</option></select></td><td><div class="write" data-k="s3-u4"></div></td></tr>
+          <tr><td><b>Câble d’alimentation</b></td><td><select class="fam" data-k="s3-f5" data-answer="cable"><option value="">— choisir —</option><option value="uc">Unité centrale</option><option value="entree">Périphérique d’entrée</option><option value="sortie">Périphérique de sortie</option><option value="cable">Câble</option></select></td><td><div class="write" data-k="s3-u5"></div></td></tr>
+          <tr><td><b>Câble vidéo</b></td><td><select class="fam" data-k="s3-f6" data-answer="cable"><option value="">— choisir —</option><option value="uc">Unité centrale</option><option value="entree">Périphérique d’entrée</option><option value="sortie">Périphérique de sortie</option><option value="cable">Câble</option></select></td><td><div class="write" data-k="s3-u6"></div></td></tr>
+        </table>
+        <button class="btn small ghost no-print" data-check-btn>Vérifier les familles</button>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="act" data-check>
+        <h3><span class="n">4</span>Où vont les informations ?<span class="time">5 min</span></h3>
+        <p class="consigne">Complète les phrases avec : <b>l’unité centrale</b> ou <b>l’écran</b>.</p>
+        <p>Quand j’appuie sur une touche, le clavier envoie l’information vers
+          <select data-k="s3-i1" data-answer="uc"><option value="">…</option><option value="uc">l’unité centrale</option><option value="ecran">l’écran</option></select>.</p>
+        <p>Puis l’unité centrale envoie l’image vers
+          <select data-k="s3-i2" data-answer="ecran"><option value="">…</option><option value="uc">l’unité centrale</option><option value="ecran">l’écran</option></select>.</p>
+        <button class="btn small ghost no-print" data-check-btn>Vérifier</button>
+        <div class="feedback"></div>
+        <p style="margin-top:18px"><b>Je dessine notre montage</b> (après l’impression, avec des flèches) :</p>
+        <div class="drawbox">Zone de dessin</div>
+      </div>
+
+      <div class="retiens" data-check>
+        <h3>Je retiens</h3>
+        <p>Un ordinateur est fait d’une <b>unité centrale</b> et de <b>périphériques</b>. Le clavier et la souris sont des périphériques d’
+          <input class="blank" data-k="s3-t1" data-answer="entrée|entree" placeholder="………">
+          : ils envoient des informations. L’écran est un périphérique de
+          <input class="blank" data-k="s3-t2" data-answer="sortie" placeholder="………">
+          : il nous montre le résultat. Les câbles apportent l’électricité et transportent les informations.</p>
+        <button class="btn small ghost no-print" data-check-btn>Vérifier mes réponses</button>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="act">
+        <h3>Mon bilan</h3>
+        <p>Dans le groupe, j’ai surtout :</p>
+        <div class="radios">
+          <label><input type="radio" name="s3-b" value="branche" data-k="s3-b"> branché</label>
+          <label><input type="radio" name="s3-b" value="verifie" data-k="s3-b"> vérifié</label>
+          <label><input type="radio" name="s3-b" value="note" data-k="s3-b"> noté les essais</label>
+          <label><input type="radio" name="s3-b" value="tout" data-k="s3-b"> un peu de tout</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="s-nav no-print"><a class="btn ghost" href="#seance-2">← Séance 2</a><a class="btn primary" href="#sequence">La séquence →</a></div>
+  </div>
+</div>
+
+<!-- ======================= LEXIQUE ======================= -->
+<div class="view" id="lexique">
+  <div class="s-head"><div class="wrap">
+    <p class="eyebrow">Les mots du projet</p>
+    <h1>Le lexique</h1>
+    <p>Tous les mots techniques du projet, expliqués simplement. Dans les séances, les mots soulignés en pointillés s’expliquent quand on passe dessus ou qu’on clique.</p>
+  </div></div>
+  <div class="wrap" style="padding-bottom:60px">
+    <input id="lex-search" class="lex-search" type="search" placeholder="Chercher un mot…">
+    <div id="lex-list" class="mots"></div>
+  </div>
+</div>
+
+<!-- ======================= CRÉDITS ======================= -->
+<div class="view" id="credits">
+  <div class="s-head"><div class="wrap">
+    <p class="eyebrow">Sources et crédits</p>
+    <h1>Crédits</h1>
+  </div></div>
+  <div class="wrap" style="padding:40px 24px 60px">
+    <h2>Photographies</h2>
+    <p>Toutes les photos viennent de <a href="https://commons.wikimedia.org/">Wikimedia Commons</a>. Elles sont sous licence libre ou dans le domaine public ; la licence exacte et l’auteur figurent sur la page de chaque fichier.</p>
+    <ul>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Ewaste.jpg">Ewaste.jpg</a>, Txopi</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Ewaste-pile.jpg">Ewaste-pile.jpg</a>, AvWijk</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:HP_ProDesk_600_G1_Tower_PC-001.jpg">HP ProDesk 600 G1 Tower PC</a>, Kyongwon</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:ATX_computer_case.jpg">ATX computer case</a>, Tiia Monto</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Computer_Motherboard_Closeup.jpg">Computer Motherboard Closeup</a>, Lenharth Systems</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:CR2032_battery,_Mitsubishi,_computer_backup_battery-2423.jpg">CR2032 battery, Mitsubishi</a>, Raimond Spekking (CC BY-SA 4.0)</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Laptop-hard-drive-exposed.jpg">Laptop hard drive exposed</a>, Evan-Amos</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Samsung_SSD_850_PRO_512GB.jpg">Samsung SSD 850 PRO</a>, Leutrim.P</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Maxell_USB_flash_drive.jpg">Maxell USB flash drive</a>, Cjp24</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Computer_monitor.jpg">Computer monitor</a>, Zzubnik (domaine public)</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:IBM_Model_M_keyboard_(PS-2)_and_mouse.jpg">IBM Model M keyboard and mouse</a>, DigitaltMuseum</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Cable-secteur.JPG">Câble secteur</a>, Wikimedia Commons</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:HDMI_Cable.JPG">HDMI Cable</a>, Kannan Shanmugam</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Male_VGA_connector.jpg">Male VGA connector</a>, Swift.Hg</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:PS2_keyboard_and_mouse_ports.jpg">PS2 keyboard and mouse ports</a>, Daniel Beardsmore (domaine public)</li>
+    </ul>
+    <h2 style="margin-top:32px">Ressources</h2>
+    <ul>
+      <li><a href="https://nird.forge.apps.education.fr/index.html">Le site national de la démarche NIRD</a></li>
+      <li><a href="https://docs.numerique.gouv.fr/docs/79015c89-73d8-477f-928c-612d00820e0b/">Le carnet de bord de l’école Louis Barrié, Figeac</a></li>
+      <li><a href="https://ada-zangemann.forge.apps.education.fr/">Ada &amp; Zangemann, version numérique libre</a></li>
+      <li><a href="https://www.education.gouv.fr/sites/default/files/document/annexe-2-programme-de-sciences-et-technologie-du-cycle-3-519023.pdf">Programme de sciences et technologie du cycle 3 (BO du 11 juin 2026)</a></li>
+    </ul>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Réparer, libérer, partager</b> · Projet NIRD au cycle 3 · Lycée français de Vienne</p>
+    <p>EF2D Technologie Fehmi KLABI – Groupe EducFi AEFE · Contenus sous licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a> · Les réponses des élèves restent enregistrées sur leur appareil uniquement.</p>
+  </div>
+</footer>
+
+<div class="pop" id="pop" role="tooltip"></div>
+<div class="modal" id="modal">
+  <div class="box">
+    <h3>Effacer ta fiche ?</h3>
+    <p>Toutes tes réponses de cette séance seront supprimées. Ton prénom, ta classe et ton groupe seront aussi effacés.</p>
+    <div class="btns"><button class="btn primary" id="modal-yes">Oui, effacer</button><button class="btn ghost" id="modal-no">Non, garder</button></div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

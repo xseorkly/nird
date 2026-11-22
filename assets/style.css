@@ -270,3 +270,11 @@ footer a{color:var(--amber)}
 .logos:empty{display:none}
 @media (max-width:600px){.logos img{height:26px}}
 @media print{.logos img{height:28px}}
+.logos img.irf{padding:0;background:none}
+@media (max-width:760px){.logos img.irf{display:none}}
+.brand-txt{white-space:nowrap}
+.nav{flex-wrap:nowrap;white-space:nowrap}
+.logos{gap:8px;margin-left:10px;flex-shrink:0}
+.logos img{height:30px}
+@media (max-width:1360px){.nav a{padding-left:9px;padding-right:9px}.logos img.irf{display:none}}
+@media (max-width:1100px){.brand-txt{display:none}}
